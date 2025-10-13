@@ -1,5 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+header{
+  background-image: url(assets/hero-bg.jpeg);
+}
+
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 10px 25px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 600;
+  color: #043216;
+  margin-left: 20px;
+}
+
+.navbar-brand:hover {
+  color: #043216;
+}
+
+.navbar-toggler {
+  background: transparent;
+}
+
+.navbar-nav {
+  gap: 10px;
+}
+
+.nav-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #043216;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #206024 !important;
+}
+
+.navbar img {
+  height: 40px;
+  width: auto;
+}
+
+nav{
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    padding-top: 15px;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+  }
 }
