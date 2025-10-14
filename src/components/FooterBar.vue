@@ -4,13 +4,13 @@
 
 
 <template>
-    <div class="footer bg-black zold py-4">
+    <div class="footer footer-bg zold py-4">
       <div class="container">
-        <div class="row">
+        <div class="row mt-5">
           <div class="col-md-4 col-sm-12 pb-5">
             <h2 class="zold fw-bold">Hogy mindig képben legyél</h2>
-            <h3 class="zold fw-bold display-5">Iratkozz fel a hírlevelünkre!</h3>
-            <button class="btn btn-green rounded-pill px-4 py-2 mt-3">Feliratkozás!</button>
+            <h3 class="zold fw-bold display-6">Iratkozz fel a hírlevelünkre!</h3>
+            <button class="btn btn-sub rounded-pill px-4 py-2 mt-3">Feliratkozás!</button>
           </div>
   
           <div class="col-md-3 col-sm-6 offset-md-2">
@@ -25,7 +25,7 @@
           <div class="col-md-3 col-sm-6">
             <h5 class="zold fw-bold">Contact</h5>
             <ul class="list-unstyled footer-list">
-              <li><a href="#" class="zold"><i class="bi bi-envelope"></i> esoorseg@erdok.hu</a></li>
+              <li><a href="#" class="zold"><i class="bi bi-envelope"></i> support@esoorseg.hu</a></li>
               <li><a href="#" class="zold"><i class="bi bi-phone"></i> +36 30 223 5059</a></li>
               <li><a href="#" class="zold"><i class="bi bi-house"></i>Tatabánya, Réti u. 1-5, 2800</a></li>
               <li><a href="#" class="zold"><i class="bi bi-linkedin"></i>Linkedin</a></li>
@@ -48,27 +48,29 @@
 
   
   <style scoped>
-  .bg-black {
-    background-color: #000000;
+  .footer-bg {
+    background-color: #243524;
   }
   
   .zold {
-    color: #00ff00;
+    color: #fff;
   }
   
-  .btn-green {
-    background-color: #00ff00;
-    color: #000000;
+  .btn-sub {
+    background-color: #ecb338;
+    color: #685617;
+    text-transform: uppercase;
     border: none;
+    font-weight: 700;
   }
   
-  .btn-green:hover {
-    background-color: #00cc00;
-    color: #000000;
+  .btn-sub:hover {
+    color: #fff;
+    text-transform: uppercase;
   }
   
   a.zold:hover {
-    color: #00cc00;
+    color: #90ba92;
     text-decoration: none;
   }
   .footer{
@@ -89,6 +91,7 @@
     align-items: center;
     white-space: nowrap; 
 }
+
 
   
   
