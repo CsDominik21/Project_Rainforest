@@ -1,5 +1,6 @@
 <script setup>
 import MenuBar from './components/MenuBar.vue';
+import FooterBar from './components/FooterBar.vue';
 </script>
 
 <template>
@@ -10,7 +11,7 @@ import MenuBar from './components/MenuBar.vue';
 
   </main>
   <footer>
-
+    <FooterBar/>
   </footer>
 </template>
 
