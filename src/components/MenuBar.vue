@@ -6,7 +6,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <div>
-        <a href="../index.html"><img src="../assets/logo_ver2.png" alt="STW logo" title="Mentsd meg az esőerdőket!"></a>
+        <a href="../index.html"><img src="../assets/logo.png" alt="Esőőrség logo" title="Mentsd meg az esőerdőket!"></a>
       </div>
       <div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -68,10 +68,6 @@
   width: 100%;
 }
 
-.navbar-brand:hover {
-  color: #043216;
-}
-
 .navbar-toggler {
   background: transparent;
 }
@@ -115,7 +111,7 @@
 }
 
 .navbar img {
-  height: 40px;
+  height: 60px;
   width: auto;
 }
 
