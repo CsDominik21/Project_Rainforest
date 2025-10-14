@@ -47,6 +47,10 @@
 <style scoped>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
+.navbar-toggler {
+  background-color: #fff !important;
+}
+
 .navbar {
   background-color: #243524 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -61,7 +65,7 @@
   width: 0%;
   height: 3px;
   background-color: #90ba92;
-  transition: width 0.3s 
+  transition: width 0.3s
 }
 
 .nav-item:hover::after {
@@ -76,22 +80,22 @@
   gap: 10px;
 }
 
-.dropdown-menu .nav-link{
+.dropdown-menu .nav-link {
   text-transform: none;
   font-size: 13px;
   font-weight: 400;
   margin: 5px 5px;
 }
 
-.dropdown-menu .nav-link:hover{
+.dropdown-menu .nav-link:hover {
   color: #cabba2 !important;
 }
 
-.dropdown-menu li:nth-of-type(1){
+.dropdown-menu li:nth-of-type(1) {
   border-bottom: 1px solid #493e2b !important;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   padding: 0px;
 }
 
@@ -116,6 +120,8 @@
 }
 
 .container-fluid {
+  display: flex;
+  flex-wrap: wrap;
   width: 60%;
   margin: 0 auto;
   justify-content: space-between;
@@ -134,48 +140,44 @@
   margin-top: 0;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   background-color: #25221a;
   border-radius: 0;
   margin-top: 3px !important;
 }
 
-.navbar-nav .nav-item:nth-of-type(5){
+.navbar-nav .nav-item:nth-of-type(5) {
   background-color: #ecb338;
   border-bottom: 5px solid #8c6e16;
 }
 
-.navbar-nav .nav-item:nth-of-type(5) .nav-link{
+.navbar-nav .nav-item:nth-of-type(5) .nav-link {
   color: #685617;
 }
 
-.navbar-nav .nav-item:nth-of-type(5) .nav-link:hover{
-  color: #ffffff !important;
+.navbar-nav .nav-item:nth-of-type(5) .nav-link:hover {
+  color: #fff !important;
 }
 
-.nav-item{
+.nav-item {
   cursor: pointer;
   position: relative;
 }
 
-@media (max-width: 768px) {
-  .navbar-nav {
-    padding-top: 15px;
-  }
+img {
+  margin: 14px 5px 14px 0px;
+}
 
-  .nav-link {
-    padding: 10px 15px;
+@media (min-width: 992px) and (max-width: 1469px) {
+  .container-fluid div {
+    margin: 0 auto;
   }
+}
 
-  .nav-item.dropdown .dropdown-menu {
-    display: none;
-  }
-
-  .nav-item.dropdown.show .dropdown-menu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+@media (min-width: 991px) and (max-width: 1171px) {
+  .nav-link{
+    font-size: 13px;
+    padding: 0px 3px !important;
   }
 }
 </style>
