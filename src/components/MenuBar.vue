@@ -6,7 +6,7 @@
   <nav class="navbar navbar-expand-xl bg-body-tertiary">
     <div class="container-fluid">
       <div>
-        <a href="../index.html"><img src="../assets/logo.png" alt="Esőőrség logo" title="Mentsd meg az esőerdőket!"></a>
+        <a><router-link to="/" title="Index"><img src="../assets/logo.png" alt="Esőőrség logo" title="Mentsd meg az esőerdőket!"></router-link></a>
       </div>
       <div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -16,8 +16,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item" href="#">
-              <a class="nav-link active" aria-current="page" href="../index.html"><i class="bi bi-house-fill"></i>
-                Főoldal</a>
+              <router-link to="/" title="Index"><a class="nav-link active" aria-current="page" href="../index.html"><i class="bi bi-house-fill"></i>
+                Főoldal</a></router-link>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#">
@@ -32,7 +32,7 @@
               <a class="nav-link"><i class="bi bi-card-checklist"></i> Kvíz</a>
             </li>
             <li class="nav-item" href="#">
-              <a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a>
+              <router-link to="/csapatunk" title="Csapatunk"><a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a></router-link>
             </li>
             <li class="nav-item" href="#">
               <a class="nav-link">Támogass minket</a>
@@ -47,11 +47,16 @@
 <style scoped>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
+a{
+  text-decoration: none !important;
+}
+
 .navbar {
   background-color: rgba(36, 53, 36, 0.9) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 0px 25px;
   position: fixed;
+  z-index: 1100;
 }
 
 .nav-item:hover::after,
