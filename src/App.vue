@@ -1,6 +1,7 @@
 <script setup>
 import MenuBar from './components/MenuBar.vue';
 import FooterBar from './components/FooterBar.vue';
+import Hero from './components/Hero.vue';
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import FooterBar from './components/FooterBar.vue';
     <MenuBar/>
   </header>
   <main>
-
+    <Hero/>
   </main>
   <footer>
     <FooterBar/>
