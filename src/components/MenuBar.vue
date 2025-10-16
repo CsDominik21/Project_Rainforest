@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-xl bg-body-tertiary">
     <div class="container-fluid">
       <div>
         <a href="../index.html"><img src="../assets/logo.png" alt="Esőőrség logo" title="Mentsd meg az esőerdőket!"></a>
@@ -47,25 +47,98 @@
 <style scoped>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
-.navbar-toggler {
-  background-color: #fff !important;
-}
-
 .navbar {
-  background-color: #243524 !important;
+  background-color: rgba(36, 53, 36, 0.9) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 0px 25px;
+  position: fixed;
+}
+
+.nav-item:hover::after,
+.navbar,
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  width: 100%;
+}
+
+.navbar,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  top: 0;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 8px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  width: 25px;
+  height: 2px;
+}
+
+.navbar-toggler-icon,
+.nav-item {
+  position: relative;
+}
+
+.navbar-toggler-icon,
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  height: 100%;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.nav-item:nth-child(-n+4)::after {
+  left: 0;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.nav-item:nth-child(-n+4)::after {
+  position: absolute;
+}
+
+.navbar-toggler-icon::before {
+  top: -7px;
+}
+
+.navbar-toggler-icon::after {
+  top: 7px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
 }
 
 .nav-item:nth-child(-n+4)::after {
   content: "";
-  position: absolute;
-  left: 0;
   bottom: 0;
   width: 0%;
   height: 3px;
   background-color: #90ba92;
-  transition: width 0.3s
+  transition: width 0.3s;
 }
 
 .nav-item:hover::after {
@@ -117,13 +190,13 @@
 .navbar img {
   height: 60px;
   width: auto;
+  margin: 14px 5px 14px 0px;
 }
 
 .container-fluid {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
-  margin: 0 auto;
   justify-content: space-between;
 }
 
@@ -131,7 +204,7 @@
   display: block;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
@@ -161,23 +234,67 @@
 
 .nav-item {
   cursor: pointer;
-  position: relative;
 }
 
-img {
-  margin: 14px 5px 14px 0px;
+@media (max-width: 1199px) {
+  .nav-item.dropdown .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: #1a251a;
+  }
+
+  #navbarSupportedContent {
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    position: fixed;
+    top: 88px;
+    right: 0;
+    bottom: 0;
+    background-color: #243524;
+    padding: 10px 20px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+
+  #navbarSupportedContent:not(.show) {
+    transform: translateX(100%);
+    visibility: hidden;
+  }
+
+  #navbarSupportedContent.show {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .nav-link {
+    padding: 10px;
+    margin: 10px 5px;
+  }
+
+  .nav-link, .navbar-nav .nav-item:nth-of-type(5){
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item:nth-of-type(5) {
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+
+  .nav-item:nth-child(-n+4)::after {
+    content: none;
+  }
 }
 
-@media (min-width: 992px) and (max-width: 1469px) {
+@media (min-width: 1200px) and (max-width: 1484px) {
   .container-fluid div {
     margin: 0 auto;
   }
 }
 
-@media (min-width: 991px) and (max-width: 1171px) {
-  .nav-link{
-    font-size: 13px;
-    padding: 0px 3px !important;
+@media (max-width: 470px) {
+  .navbar img {
+    height: 38px;
+    margin: 25px 5px 25px 0px;
   }
 }
 </style>
