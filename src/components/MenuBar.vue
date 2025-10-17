@@ -29,7 +29,7 @@
               </ul>
             </li>
             <li class="nav-item" href="#">
-              <a class="nav-link"><i class="bi bi-card-checklist"></i> Kvíz</a>
+              <router-link to="/quiz" title="Quiz"><a class="nav-link"><i class="bi bi-card-checklist"></i> Kvíz</a></router-link>
             </li>
             <li class="nav-item" href="#">
               <router-link to="/csapatunk" title="Csapatunk"><a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a></router-link>
