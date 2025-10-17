@@ -1,0 +1,8 @@
+export const wildlife = [
+    { id: 1, name: 'Jaguár', image: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=500', count: '173,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
+    { id: 2, name: 'Kolibri', image: 'https://images.unsplash.com/photo-1444464666168-49d633b86797?w=500', count: '338,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
+    { id: 3, name: 'Orchidea', image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500', count: '25,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
+    { id: 4, name: 'Papagáj', image: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=500', count: '393,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
+    { id: 5, name: 'Páfrány', image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500', count: '11,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
+    { id: 6, name: 'Tukán', image: 'https://images.unsplash.com/photo-1612024782955-49c4165b9e4f?w=500', count: '50,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' }
+];
