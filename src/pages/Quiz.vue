@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { quizData } from '../datas2/quizData';
+import { quizData } from '../datas/quizData';
 
 const selectedDifficulty = ref(null);
 const currentQuestionIndex = ref(0);
