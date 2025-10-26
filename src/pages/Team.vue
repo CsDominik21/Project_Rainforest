@@ -1,14 +1,15 @@
 <script setup>
+import ContactForm from '../components/ContactForm.vue';
 const teamMembers = [
   {
     name: 'Csöllei Dominik',
-    role: 'Projekt menedzser',
+    role: 'Faőrző főnök',
     email: 'csollei.dominik.2021i@bankitatabanya.hu',
     phone: '+36 30 123 4312'
   },
   {
     name: 'Balogh Máté',
-    role: 'Fullstack fejlesztő',
+    role: 'Facsemete felügyelő',
     email: 'balogh.mate.2021i@bankitatabanya.hu',
     phone: '+36 30 456 7890'
   }
@@ -20,7 +21,7 @@ const teamMembers = [
     <section class="hero">
       <div class="hero__overlay"></div>
       <div class="container">
-        <h1 class="hero__title">Csapatunk</h1>
+        <h1 class="hero__title p-3">Csapatunk</h1>
         <p class="hero__subtitle">
           Hiszünk a közös munkában és az innovációban. Csapatunkat a szenvedély
           és a szakértelem hajtja, hogy mindig a legjobb megoldásokat nyújtsuk.
@@ -61,6 +62,7 @@ const teamMembers = [
       </div>
     </section>
   </div>
+  <ContactForm />
 </template>
 
 <style scoped>
@@ -69,6 +71,7 @@ const teamMembers = [
   padding: 0;
   box-sizing: border-box;
 }
+
 
 .hero {
   min-height: 60vh;
@@ -103,6 +106,7 @@ const teamMembers = [
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
 }
 
 .hero__subtitle {
