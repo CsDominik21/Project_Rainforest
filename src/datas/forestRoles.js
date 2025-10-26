@@ -1,5 +1,5 @@
 export const roles = [
-    { icon: 'bi-tree-fill', title: 'Légtisztítás', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.', delay: '0.2s' },
-    { icon: 'bi-cloud-rain-fill', title: 'Vízforgalom', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.', delay: '0.4s' },
-    { icon: 'bi-bug-fill', title: 'Biodiverzitás', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.', delay: '0.6s' }
+    { icon: 'bi-tree-fill', title: 'Légtisztítás', description: 'Az esőerdők hatalmas mennyiségű szén-dioxidot nyelnek el és oxigént bocsátanak ki, így természetes „földi tüdőként” működnek. A fotoszintézis során tisztítják a levegőt, csökkentik az üvegházhatású gázok koncentrációját, és hozzájárulnak a levegő minőségének javításához.', delay: '0.2s' },
+    { icon: 'bi-cloud-rain-fill', title: 'Vízforgalom', description: 'Az esőerdők jelentős szerepet játszanak a víz körforgásában: a fák párologtatása révén nedvességet juttatnak a légkörbe, ami elősegíti a felhőképződést és a csapadékképződést. Ezzel nemcsak helyben, hanem távolabbi területeken is befolyásolják az éghajlatot és a vízellátást.', delay: '0.4s' },
+    { icon: 'bi-bug-fill', title: 'Biodiverzitás', description: 'Az esőerdők a Föld fajainak mintegy felét otthonukban fogadják. Rendkívül gazdag élőviláguk biztosítja az ökológiai egyensúlyt, és számos, még felfedezetlen fajnak adnak életteret. A biodiverzitás megőrzése kulcsfontosságú a természetes rendszerek stabilitása és az emberi élet fenntarthatósága szempontjából.', delay: '0.6s' }
 ];
