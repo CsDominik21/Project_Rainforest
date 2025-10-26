@@ -16,7 +16,7 @@ const allToDo = ref([]);
 const allOrganism = ref([]);
 const allRainforest = ref([]);
 const selectedWildlife = ref(null);
-const hoveredForest = ref(null);
+const selectedForest = ref(null);
 
 const loadRoles = () => {
     for(var i = 0; roles.length > i; i++){
@@ -95,21 +95,24 @@ loadRainforest();
                     class="world-map" />
 
                 <div v-for="rainforest in allRainforest" :key="rainforest.getId()" class="forest-marker"
-                    :style="{ left: rainforest.getLeft(), top: rainforest.getTop() }" @mouseenter="hoveredForest = rainforest"
-                    @mouseleave="hoveredForest = null">
-                    <div class="marker-dot"></div>
+                    :style="{ left: rainforest.getLeft(), top: rainforest.getTop() }" 
+                    @click="selectedForest = selectedForest?.getId() === rainforest.getId() ? null : rainforest">
+                    <div class="marker-dot" :class="{ active: selectedForest?.getId() === rainforest.getId() }"></div>
                     <div class="marker-pulse"></div>
                 </div>
 
                 <Transition name="fade-slide">
-                    <div v-if="hoveredForest" class="forest-info" :key="hoveredForest.getId()">
+                    <div v-if="selectedForest" class="forest-info" :key="selectedForest.getId()">
+                        <button class="forest-info__close" @click.stop="selectedForest = null">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
                         <div class="forest-info__image">
-                            <img :src="hoveredForest.getImage()" :alt="hoveredForest.getName()">
+                            <img :src="selectedForest.getImage()" :alt="selectedForest.getName()">
                         </div>
                         <div class="forest-info__content">
-                            <span class="forest-info__region">{{ hoveredForest.getRegion() }}</span>
-                            <h3 class="forest-info__name">{{ hoveredForest.getName() }}</h3>
-                            <p class="forest-info__text">{{ hoveredForest.getInfo() }}</p>
+                            <span class="forest-info__region">{{ selectedForest.getRegion() }}</span>
+                            <h3 class="forest-info__name">{{ selectedForest.getName() }}</h3>
+                            <p class="forest-info__text">{{ selectedForest.getInfo() }}</p>
                         </div>
                     </div>
                 </Transition>
@@ -571,9 +574,15 @@ loadRainforest();
     transition: all 0.3s ease;
 }
 
-.forest-marker:hover .marker-dot {
+.marker-dot.active {
     transform: scale(1.3);
     box-shadow: 0 6px 20px rgba(144, 186, 146, 0.8);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.forest-marker:hover .marker-dot {
+    transform: scale(1.2);
+    box-shadow: 0 5px 16px rgba(144, 186, 146, 0.7);
 }
 
 .marker-pulse {
@@ -606,15 +615,40 @@ loadRainforest();
     backdrop-filter: blur(20px);
     border-radius: 1.5rem;
     overflow: hidden;
-    width: 350px;
+    width: min(350px, 90vw);
+    max-width: 400px;
     border: 1px solid rgba(144, 186, 146, 0.3);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 
+.forest-info__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 11;
+}
+
+.forest-info__close:hover {
+    background: rgba(144, 186, 146, 0.3);
+    transform: rotate(90deg);
+}
+
 .forest-info__image {
     width: 100%;
-    height: 200px;
+    height: clamp(150px, 40vw, 200px);
     overflow: hidden;
 }
 
@@ -630,7 +664,7 @@ loadRainforest();
 }
 
 .forest-info__content {
-    padding: 1.5rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
 }
 
 .forest-info__region {
