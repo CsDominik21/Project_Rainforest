@@ -1,5 +1,17 @@
 <script setup>
+import DonationModal from './DonationModal.vue';
+import { ref } from 'vue';
 
+const showModal = ref(false);
+
+const handleDonationSubmit = (donationData) => {
+  console.log('Sikeres támogatás:', donationData);
+  showModal.value = false;
+  router.push('/top-donators')
+};
+const openModal = () => {
+  showModal.value = true;
+};
 </script>
 
 <template>
@@ -16,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item" href="#">
-              <router-link to="/" title="Index"><a class="nav-link active" aria-current="page" href="../index.html"><i class="bi bi-house-fill"></i>
+              <router-link to="/" title="Index"><a class="nav-link active" aria-current="page"><i class="bi bi-house-fill"></i>
                 Főoldal</a></router-link>
             </li>
             <li class="nav-item dropdown">
@@ -35,13 +47,20 @@
               <router-link to="/csapatunk" title="Csapatunk"><a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a></router-link>
             </li>
             <li class="nav-item" href="#">
-              <a class="nav-link">Támogass minket</a>
+              <a class="nav-link" @click="openModal">Támogass minket</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
+
+
+  <DonationModal 
+    v-if="showModal" 
+    @close="showModal = false"
+    @submit="handleDonationSubmit"
+  />
 </template>
 
 <style scoped>
