@@ -60,7 +60,7 @@ const handleSubmit = () => {
         <div class="contact-section__bg"></div>
         <div class="container">
             <div class="contact-content">
-                <h2 class="contact-content__title">Vedd fel velünk a kapcsolatot</h2>
+                <h2 class="contact-content__title">Lépj kapcsolatba velünk!</h2>
 
                 <form @submit.prevent="handleSubmit" class="contact-form">
                     <div class="form-row">
@@ -113,8 +113,11 @@ const handleSubmit = () => {
 
 <style scoped>
 .contact-section {
+    min-height: 100vh;
     background: linear-gradient(180deg, #25221a 0%, #1a251a 100%);
     padding: 8rem 0;
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
 }
