@@ -15,10 +15,10 @@
         <div class="col-md-3 col-sm-6 offset-md-2">
           <h5 class=" fw-bold">Oldalak</h5>
           <ul class="list-unstyled footer-list">
-            <li><a href="#" >Élővilág</a></li>
-            <li><a href="#" >Kvíz</a></li>
-            <li><a href="#" >Csapatunk</a></li>
-            <li><router-link to="/top-donators" title="TopDonators"><a class="nav-link active" aria-current="page">Támogatóink</a></router-link></li>
+            <li class="footer__li"><a href="#" >Élővilág</a></li>
+            <li class="footer__li"><router-link to="/quiz" title="Quiz"><a>Kvíz</a></router-link></li>
+            <li class="footer__li"><router-link to="/csapatunk" title="Csapatunk"><a>Csapatunk</a></router-link></li>
+            <li class="footer__li"><router-link to="/top-donators" title="TopDonators"><a aria-current="page">Támogatóink</a></router-link></li>
           </ul>
         </div>
         <div class="col-md-3 col-sm-6">
@@ -61,6 +61,12 @@
 </template>
 
 <style scoped>
+.footer__li{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+
 .footer-bg {
   background-color: #243524;
 }
