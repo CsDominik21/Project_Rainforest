@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Index from "../pages/Index.vue";
 import Team from "../pages/Team.vue";
 import Quiz from "../pages/Quiz.vue";
+import TopDonators from "../pages/TopDonators.vue";
 const routes = [
     {
         path: '/',
@@ -14,6 +15,10 @@ const routes = [
     {
         path: '/quiz',
         component: Quiz
+    },
+    {
+        path: '/top-donators',
+        component: TopDonators
     }
 ];
 
