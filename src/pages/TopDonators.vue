@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
+import ContactForm from '../components/ContactForm.vue';
 
 const donations = ref([]);
 const loading = ref(true);
@@ -62,7 +63,7 @@ onMounted(() => {
   <div class="donators-page">
     <div class="hero-section">
       <div class="hero-content">
-        <h1 class="page-title">Top Támogatók</h1>
+        <h1 class="page-title p-3">Top Támogatók</h1>
         <p class="page-subtitle">
           Köszönjük minden támogatónknak, akik hozzájárulnak az esőerdők megóvásához!
         </p>
@@ -118,26 +119,12 @@ onMounted(() => {
             <p class="message-text">{{ donation.message }}</p>
           </div>
 
-          <div class="divider"></div>
 
-          <div class="contact-info">
-            <div class="info-item">
-              <i class="bi bi-envelope-fill info-icon"></i>
-              <span class="info-text">{{ donation.email }}</span>
-            </div>
-            <div class="info-item">
-              <i class="bi bi-telephone-fill info-icon"></i>
-              <span class="info-text">{{ donation.phone }}</span>
-            </div>
-            <div class="info-item">
-              <i class="bi bi-geo-alt-fill info-icon"></i>
-              <span class="info-text">{{ donation.address }}</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
+  <ContactForm />
 </template>
 
 <style scoped>
@@ -357,35 +344,7 @@ onMounted(() => {
   font-style: italic;
 }
 
-.divider {
-  height: 1px;
-  background: rgba(144, 186, 146, 0.2);
-  margin: 24px 0;
-}
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.info-icon {
-  font-size: 16px;
-  color: #90ba92;
-  flex-shrink: 0;
-}
-
-.info-text {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  word-break: break-word;
-}
 
 @media (max-width: 768px) {
   .hero-section {
