@@ -18,7 +18,7 @@
             <li><a href="#" >Élővilág</a></li>
             <li><a href="#" >Kvíz</a></li>
             <li><a href="#" >Csapatunk</a></li>
-            <li><a href="#" >Támogatóink</a></li>
+            <li><router-link to="/top-donators" title="TopDonators"><a class="nav-link active" aria-current="page">Támogatóink</a></router-link></li>
           </ul>
         </div>
         <div class="col-md-3 col-sm-6">
