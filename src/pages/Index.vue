@@ -52,18 +52,14 @@ loadRainforest();
     <section class="hero">
         <div class="hero__overlay"></div>
         <div class="container">
-            <h1 class="hero__title animate-float-up">Esőőrség</h1>
-            <p class="hero__subtitle animate-float-up" style="animation-delay: 0.15s;">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur enim a, dolor ut inventore
-                voluptas tempore, dolores vitae dolorum culpa est nostrum ipsa minima harum modi aut.
+            <h1 class="hero__title animate-float-up p-2">Esőőrség</h1>
+            <p class="hero__subtitle animate-float-up">
+                Védd meg a Föld tüdejét, csatlakozz az esőerdők őrzőihez! Együtt megállíthatjuk az erdőirtást, óvhatjuk a természet kincseit, és biztosíthatjuk a jövő nemzedékeinek a zöldebb bolygót.
             </p>
-            <button class="hero__cta animate-float-up" style="animation-delay: 0.3s;">
+            <button class="hero__cta animate-float-up">
                 <span>Kezdjük el</span>
                 <i class="bi bi-arrow-right"></i>
             </button>
-        </div>
-        <div class="hero__scroll-indicator animate-bounce">
-            <i class="bi bi-chevron-down"></i>
         </div>
     </section>
 
@@ -71,16 +67,14 @@ loadRainforest();
         <div class="container">
             <header class="roles__header">
                 <h2 class="roles__title animate-float-up">Az esőerdők szerepe</h2>
-                <p class="roles__description animate-float-up" style="animation-delay: 0.15s;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc,
-                    in lacinia risus. Integer tincidunt eget leo nec volutpat.
+                <p class="roles__description animate-float-up">
+                    Az esőerdők a Föld egyik legfontosabb ökoszisztémái, amelyek kulcsszerepet játszanak a globális éghajlat szabályozásában, az oxigéntermelésben és a szén-dioxid megkötésében. Emellett számos élőlény otthonai, valamint rengeteg gyógyszeralapanyag és nyersanyag forrásai. Az esőerdők megőrzése létfontosságú az emberiség és a bolygó jövője szempontjából.
                 </p>
             </header>
 
             <div class="roles__grid">
                 <article v-for="(role, index) in allRole" :key="index" class="role-card animate-fade-scale"
                     :style="{ animationDelay: role.getDelay() }">
-                    <div class="role-card__glow"></div>
                     <div class="role-card__icon">
                         <i :class="role.getIcon()" aria-hidden="true"></i>
                     </div>
@@ -195,16 +189,14 @@ loadRainforest();
         <div class="container">
             <header class="roles__header">
                 <h2 class="roles__title animate-float-up">Mit tudsz tenni?</h2>
-                <p class="roles__description animate-float-up" style="animation-delay: 0.15s;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc,
-                    in lacinia risus. Integer tincidunt eget leo nec volutpat.
+                <p class="roles__description animate-float-up">
+                    Az esőerdők védelme mindannyiunk felelőssége. Minden apró lépés számít, a tudatos döntésektől kezdve a közösségi összefogásig. Támogasd a természetet, és legyél része a változásnak, amely megőrzi bolygónk zöld szívét!
                 </p>
             </header>
 
             <div class="roles__grid">
                 <article v-for="(todo, index) in allToDo" :key="index" class="role-card animate-fade-scale"
                     :style="{ animationDelay: todo.getDelay() }">
-                    <div class="role-card__glow"></div>
                     <div class="role-card__icon">
                         <i :class="todo.getIcon()" aria-hidden="true"></i>
                     </div>
@@ -279,10 +271,6 @@ loadRainforest();
     animation: fadeScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-bounce {
-    animation: bounce 2s ease-in-out infinite;
-}
-
 .hero {
     min-height: 100vh;
     display: flex;
@@ -322,7 +310,7 @@ loadRainforest();
 .hero__subtitle {
     font-size: clamp(1.05rem, 2vw, 1.35rem);
     margin-bottom: 2.5rem;
-    max-width: 650px;
+    max-width: 900px;
     margin-inline: auto;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.7;
@@ -383,22 +371,6 @@ loadRainforest();
     transform: translateY(-1px);
 }
 
-.hero__scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.5rem;
-    z-index: 2;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.hero__scroll-indicator:hover {
-    color: #90ba92;
-}
-
 .roles {
     background: linear-gradient(180deg, #1a251a 0%, #243524 50%, #25221a 100%);
     padding: 8rem 0;
@@ -422,7 +394,7 @@ loadRainforest();
 .roles__description {
     font-size: clamp(1.05rem, 2vw, 1.2rem);
     color: rgba(255, 255, 255, 0.7);
-    max-width: 680px;
+    max-width: 1100px;
     margin-inline: auto;
     line-height: 1.8;
     font-weight: 300;
@@ -449,18 +421,6 @@ loadRainforest();
     overflow: hidden;
 }
 
-.role-card__glow {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(144, 186, 146, 0.15) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    animation: glowPulse 3s ease-in-out infinite;
-}
-
 .role-card::before {
     content: '';
     position: absolute;
@@ -483,7 +443,7 @@ loadRainforest();
 }
 
 .role-card:hover::before,
-.role-card:hover .role-card__glow {
+.role-card:hover {
     opacity: 1;
 }
 
@@ -1080,10 +1040,6 @@ loadRainforest();
 
     .role-card {
         padding: 2.5rem 2rem;
-    }
-
-    .hero__scroll-indicator {
-        bottom: 1rem;
     }
 
     .map-section {
