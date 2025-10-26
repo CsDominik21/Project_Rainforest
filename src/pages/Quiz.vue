@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { quizData } from '../datas/quizData';
+import ContactForm from '../components/ContactForm.vue';
 
 const selectedDifficulty = ref(null);
 const currentQuestionIndex = ref(0);
@@ -101,7 +102,7 @@ const getResultIcon = () => {
     <div class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1 class="quiz-title">Rainforest Quiz</h1>
+        <h1 class="quiz-title p-3">Rainforest Quiz</h1>
         <p class="quiz-subtitle">Teszteld esőerdő tudásodat! Válaszd ki a nehézségi szintet és indulhat a kaland.</p>
       </div>
     </div>
@@ -186,6 +187,7 @@ const getResultIcon = () => {
       </div>
     </div>
   </div>
+  <ContactForm />
 </template>
 
 <style scoped>
