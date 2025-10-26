@@ -1,8 +1,15 @@
+import jaguarImage from '../assets/jaguar.jpg';
+import orangutanImage from '../assets/orangutan.jpg';
+import papaszemesmedveImage from '../assets/papaszemes-medve.jpg';
+import rafflesiaarnoldiiImage from '../assets/rafflesia arnoldii.jpg';
+import brazildiofaImage from '../assets/brazil-diofa.jpg';
+import oriasbromeliaImage from '../assets/orias-bromelia.jpg';
+
 export const wildlife = [
-    { id: 1, name: 'Jaguár', image: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=500', count: '173,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
-    { id: 2, name: 'Kolibri', image: 'https://images.unsplash.com/photo-1444464666168-49d633b86797?w=500', count: '338,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
-    { id: 3, name: 'Orchidea', image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500', count: '25,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
-    { id: 4, name: 'Papagáj', image: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=500', count: '393,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
-    { id: 5, name: 'Páfrány', image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500', count: '11,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' },
-    { id: 6, name: 'Tukán', image: 'https://images.unsplash.com/photo-1612024782955-49c4165b9e4f?w=500', count: '50,000', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in lacinia risus.' }
+    { id: 1, name: 'Jaguár', image: jaguarImage, count: '15 000', description: 'A jaguár Dél-Amerika esőerdeinek legnagyobb ragadozója, kulcsszerepet játszik az ökoszisztéma egyensúlyának fenntartásában. Élőhelyeinek pusztítása és az orvvadászat miatt egyedszáma drasztikusan csökken.' },
+    { id: 2, name: 'Orángután', image: orangutanImage, count: '60 000', description: 'A borneói és szumátrai orángután az ember legközelebbi rokonai közé tartozik. Az olajpálma-ültetvények terjedése miatt erdőik eltűnnek, így a faj a kihalás szélére sodródott.' },
+    { id: 3, name: 'Pápaszemes medve', image: papaszemesmedveImage, count: '18 000', description: 'Az Andok felhőerdőiben élő pápaszemes medve Dél-Amerika egyetlen medvefaja. Az erdőirtás és az élőhelyek feldarabolódása miatt populációja folyamatosan csökken.' },
+    { id: 4, name: 'Rafflesia arnoldii', image: rafflesiaarnoldiiImage, count: '<10 000', description: 'A világ legnagyobb virága, amely akár egy méter átmérőjű is lehet. Parazita életmódú, és kizárólag Délkelet-Ázsia esőerdeiben található meg, ahol az élőhelyek pusztulása súlyosan veszélyezteti.' },
+    { id: 5, name: 'Brazil diófa', image: brazildiofaImage, count: 'Nincs pontos adat', description: 'A brazil diófa az amazóniai esőerdők egyik kulcsfaja. Termése fontos élelmiszer és megélhetési forrás a helyi közösségek számára, de az illegális fakitermelés és az erdőirtás komolyan veszélyezteti fennmaradását.' },
+    { id: 6, name: 'Óriás bromélia', image: oriasbromeliaImage, count: '30 000', description: 'Egyedülálló növény, amely akár 10 méter magasra is megnő. Virágzása ritka esemény, és a klímaváltozás következtében élőhelyei fokozatosan eltűnnek.' }
 ];
