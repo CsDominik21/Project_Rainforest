@@ -18,27 +18,34 @@ const allRainforest = ref([]);
 const selectedWildlife = ref(null);
 const selectedForest = ref(null);
 
+const scrollToRoles = () => {
+    const rolesSection = document.querySelector('.roles');
+    if (rolesSection) {
+        rolesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 const loadRoles = () => {
-    for (var i = 0; roles.length > i; i++) {
-        allRole.value.push(new Role(roles[i].icon, roles[i].title, roles[i].description, roles[i].delay));
+    for(var i = 0; roles.length > i; i++){
+        allRole.value.push(new Role(roles[i].icon,roles[i].title,roles[i].description,roles[i].delay));
     }
 }
 
 const loadToDos = () => {
-    for (var i = 0; toDos.length > i; i++) {
-        allToDo.value.push(new ToDo(toDos[i].icon, toDos[i].title, toDos[i].description, toDos[i].delay));
+    for(var i = 0; toDos.length > i; i++){
+        allToDo.value.push(new ToDo(toDos[i].icon,toDos[i].title,toDos[i].description,toDos[i].delay));
     }
 }
 
 const loadWildlife = () => {
-    for (var i = 0; wildlife.length > i; i++) {
-        allOrganism.value.push(new Organism(wildlife[i].id, wildlife[i].name, wildlife[i].image, wildlife[i].count, wildlife[i].description));
+    for(var i = 0; wildlife.length > i; i++){
+        allOrganism.value.push(new Organism(wildlife[i].id,wildlife[i].name,wildlife[i].image,wildlife[i].count,wildlife[i].description));
     }
 }
 
 const loadRainforest = () => {
-    for (var i = 0; rainforests.length > i; i++) {
-        allRainforest.value.push(new Rainforest(rainforests[i].id, rainforests[i].name, rainforests[i].left, rainforests[i].top, rainforests[i].image, rainforests[i].info, rainforests[i].region));
+    for(var i = 0; rainforests.length > i; i++){
+        allRainforest.value.push(new Rainforest(rainforests[i].id,rainforests[i].name,rainforests[i].left,rainforests[i].top,rainforests[i].image,rainforests[i].info,rainforests[i].region));
     }
 }
 
@@ -54,10 +61,9 @@ loadRainforest();
         <div class="container">
             <h1 class="hero__title animate-float-up p-2">Esőőrség</h1>
             <p class="hero__subtitle animate-float-up">
-                Védd meg a Föld tüdejét, csatlakozz az esőerdők őrzőihez! Együtt megállíthatjuk az erdőirtást, óvhatjuk
-                a természet kincseit, és biztosíthatjuk a jövő nemzedékeinek a zöldebb bolygót.
+                Védd meg a Föld tüdejét, csatlakozz az esőerdők őrzőihez! Együtt megállíthatjuk az erdőirtást, óvhatjuk a természet kincseit, és biztosíthatjuk a jövő nemzedékeinek a zöldebb bolygót.
             </p>
-            <button class="hero__cta animate-float-up">
+            <button class="hero__cta animate-float-up" @click="scrollToRoles">
                 <span>Kezdjük el</span>
                 <i class="bi bi-arrow-right"></i>
             </button>
@@ -69,10 +75,7 @@ loadRainforest();
             <header class="roles__header">
                 <h2 class="roles__title animate-float-up">Az esőerdők szerepe</h2>
                 <p class="roles__description animate-float-up">
-                    Az esőerdők a Föld egyik legfontosabb ökoszisztémái, amelyek kulcsszerepet játszanak a globális
-                    éghajlat szabályozásában, az oxigéntermelésben és a szén-dioxid megkötésében. Emellett számos
-                    élőlény otthonai, valamint rengeteg gyógyszeralapanyag és nyersanyag forrásai. Az esőerdők megőrzése
-                    létfontosságú az emberiség és a bolygó jövője szempontjából.
+                    Az esőerdők a Föld egyik legfontosabb ökoszisztémái, amelyek kulcsszerepet játszanak a globális éghajlat szabályozásában, az oxigéntermelésben és a szén-dioxid megkötésében. Emellett számos élőlény otthonai, valamint rengeteg gyógyszeralapanyag és nyersanyag forrásai. Az esőerdők megőrzése létfontosságú az emberiség és a bolygó jövője szempontjából.
                 </p>
             </header>
 
@@ -95,11 +98,11 @@ loadRainforest();
             <h2 class="map-section__title">Világ esőerdői</h2>
 
             <div class="map-container">
-                <img src="../assets/world_map.svg" alt="World Map"
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Simple_world_map.svg" alt="World Map"
                     class="world-map" />
 
                 <div v-for="rainforest in allRainforest" :key="rainforest.getId()" class="forest-marker"
-                    :style="{ left: rainforest.getLeft(), top: rainforest.getTop() }"
+                    :style="{ left: rainforest.getLeft(), top: rainforest.getTop() }" 
                     @click="selectedForest = selectedForest?.getId() === rainforest.getId() ? null : rainforest">
                     <div class="marker-dot" :class="{ active: selectedForest?.getId() === rainforest.getId() }"></div>
                     <div class="marker-pulse"></div>
@@ -128,10 +131,9 @@ loadRainforest();
         <div class="container">
             <h2 class="wildlife-section__title">Élővilág</h2>
             <p class="wildlife-section__description">
-                Az esőerdők élővilága páratlanul gazdag: milliónyi növény és állatfaj otthona. Sajnos ez a gazdag
-                élővilág egyre nagyobb veszélyben van. Az erdőirtás, az élőhelyek pusztulása és a
-                klímaváltozás miatt rengeteg faj a kihalás szélére sodródott. Az esőerdők védelme így nemcsak a
-                természet szépségének megőrzését jelenti, hanem a Föld biológiai egyensúlyának fenntartását is.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in
+                lacinia risus. Integer tincidunt eget leo nec volutpat. Praesent eget vulputate arcu.
+                Nam non ex convallis, bibendum dolor in, ultrices elit.
             </p>
 
             <div class="wildlife-grid">
@@ -181,7 +183,9 @@ loadRainforest();
             <div class="cta-content">
                 <h2 class="cta-content__title">Teszteld a tudásod</h2>
                 <p class="cta-content__text">
-                    Próbáld ki, mennyit tudsz az esőerdőkről és élővilágukról! Kvízekkel, feladatokkal és érdekességekkel ellenőrizheted a tudásodat, miközben új információkat is elsajátítasz.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc,
+                    in lacinia risus. Integer tincidunt eget leo nec volutpat. Praesent eget vulputate
+                    arcu. Nam non ex convallis, bibendum dolor in, ultrices elit.
                 </p>
                 <button class="cta-content__button">
                     <span>Tovább</span>
@@ -196,9 +200,7 @@ loadRainforest();
             <header class="roles__header">
                 <h2 class="roles__title animate-float-up">Mit tudsz tenni?</h2>
                 <p class="roles__description animate-float-up">
-                    Az esőerdők védelme mindannyiunk felelőssége. Minden apró lépés számít, a tudatos döntésektől kezdve
-                    a közösségi összefogásig. Támogasd a természetet, és legyél része a változásnak, amely megőrzi
-                    bolygónk zöld szívét!
+                    Az esőerdők védelme mindannyiunk felelőssége. Minden apró lépés számít, a tudatos döntésektől kezdve a közösségi összefogásig. Támogasd a természetet, és legyél része a változásnak, amely megőrzi bolygónk zöld szívét!
                 </p>
             </header>
 
@@ -215,7 +217,7 @@ loadRainforest();
         </div>
     </section>
 
-    <ContactForm />
+    <ContactForm/>
 </template>
 
 <style scoped>
@@ -683,14 +685,14 @@ loadRainforest();
 }
 
 .forest-info__name {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 0.75rem;
 }
 
 .forest-info__text {
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.6;
     margin: 0;
@@ -739,7 +741,7 @@ loadRainforest();
     font-size: clamp(1rem, 2vw, 1.1rem);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto 4rem;
     line-height: 1.8;
     padding-inline: 1rem;
@@ -1087,10 +1089,51 @@ loadRainforest();
 
     .map-container {
         padding: 1rem;
+        border-radius: 1rem;
     }
 
     .forest-info {
-        width: 280px;
+        width: min(320px, 85vw);
+        border-radius: 1rem;
+    }
+
+    .forest-info__close {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .forest-info__image {
+        height: clamp(120px, 35vw, 150px);
+    }
+
+    .forest-info__content {
+        padding: 1rem;
+    }
+
+    .forest-info__region {
+        font-size: 0.65rem;
+    }
+
+    .forest-info__name {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .forest-info__text {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .marker-dot {
+        width: 14px;
+        height: 14px;
+    }
+
+    .marker-dot.active {
+        transform: scale(1.2);
     }
 
     .wildlife-section {
