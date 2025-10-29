@@ -35,7 +35,7 @@ export const wildlife = [
         name: 'Jaguár', 
         image: jaguarImage,
         description: 'A jaguár Dél-Amerika esőerdeinek legnagyobb ragadozója, kulcsszerepet játszik az ökoszisztéma egyensúlyának fenntartásában. Élőhelyeinek pusztítása és az orvvadászat miatt egyedszáma drasztikusan csökken.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -43,7 +43,7 @@ export const wildlife = [
         name: 'Orángután', 
         image: orangutanImage,
         description: 'A borneói és szumátrai orángután az ember legközelebbi rokonai közé tartozik. Az olajpálma-ültetvények terjedése miatt erdőik eltűnnek, így a faj a kihalás szélére sodródott.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Borneó és Szumátra esőerdői'
     },
     { 
@@ -51,7 +51,7 @@ export const wildlife = [
         name: 'Pápaszemes medve', 
         image: papaszemesmedveImage,
         description: 'Az Andok felhőerdőiben élő pápaszemes medve Dél-Amerika egyetlen medvefaja. Az erdőirtás és az élőhelyek feldarabolódása miatt populációja folyamatosan csökken.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Andok felhőerdői'
     },
     { 
@@ -59,7 +59,7 @@ export const wildlife = [
         name: 'Rafflesia arnoldii', 
         image: rafflesiaarnoldiiImage,
         description: 'A világ legnagyobb virága, amely akár egy méter átmérőjű is lehet. Parazita életmódú, és kizárólag Délkelet-Ázsia esőerdeiben található meg, ahol az élőhelyek pusztulása súlyosan veszélyezteti.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Szumátra és Borneó esőerdői'
     },
     { 
@@ -67,7 +67,7 @@ export const wildlife = [
         name: 'Brazil diófa', 
         image: brazildiofaImage,
         description: 'A brazil diófa az amazóniai esőerdők egyik kulcsfája. Termése fontos élelmiszer és megélhetési forrás a helyi közösségek számára, de az illegális fakitermelés és az erdőirtás komolyan veszélyezteti fennmaradását.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -75,7 +75,7 @@ export const wildlife = [
         name: 'Óriás bromélia', 
         image: oriasbromeliaImage,
         description: 'Egyedülálló növény, amely akár 10 méter magasra is megnő. Virágzása ritka esemény, és a klímaváltozás következtében élőhelyei fokozatosan eltűnnek.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Andok felhőerdői'
     },
     { 
@@ -83,7 +83,7 @@ export const wildlife = [
         name: 'Hárpia sas', 
         image: harpiasasImage,
         description: 'A világ egyik legnagyobb ragadozó madara, amely az amazóniai esőerdők csúcsragadozója. Erőteljes karmai képesek majmokat és lajhárokat is elejteni. Az erdőirtás miatt élőhelyei folyamatosan zsugorodnak.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -91,7 +91,7 @@ export const wildlife = [
         name: 'Kék makákó', 
         image: kekmakakoImage,
         description: 'Ez a ritka madagaszkári főemlős kizárólag a sziget északkeleti esőerdeiben él. Jellegzetes kék bőre miatt könnyen felismerhető. A túlzott vadászat és erdőirtás miatt kritikusan veszélyeztetett.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Madagaszkár esőerdői'
     },
     { 
@@ -99,7 +99,7 @@ export const wildlife = [
         name: 'Okapi', 
         image: okapi,
         description: 'A kongói esőerdők rejtélyes lakója, amely a zsiráf legközelebbi rokona. Csíkos lábai zebrára emlékeztetnek. Az illegális bányászat és konfliktusok veszélyeztetik élőhelyét.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Kongó-medence esőerdő'
     },
     { 
@@ -107,7 +107,7 @@ export const wildlife = [
         name: 'Aranybéka', 
         image: aranybekaImage,
         description: 'A costa ricai felhőerdők ikonikus lakója, amely élénksárga színével figyelmezteti ragadozóit mérgező voltára. A klímaváltozás és gombás fertőzések miatt a kihalás szélén áll.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Costa Rica felhőerdői'
     },
     { 
@@ -115,7 +115,7 @@ export const wildlife = [
         name: 'Közép-amerikai tapír', 
         image: tapirImage,
         description: 'A tapír az esőerdők "kertésze", hiszen magjait szétszórva segíti az erdő megújulását. Az élőhelyek elvesztése miatt már csak elszigetelt populációkban találhatók meg.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Közép-Amerika esőerdői'
     },
     { 
@@ -123,7 +123,7 @@ export const wildlife = [
         name: 'Hegyi gorilla', 
         image: gorillaImage, 
         description: 'Afrika felhőerdeiben élő legnagyobb emberszabású majom. Rendkívül intelligens és szociális lény. Az orvvadászat, élőhely-vesztés és betegségek miatt kritikusan veszélyeztetett.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Kongó-medence felhőerdői'
     },
     { 
@@ -131,7 +131,7 @@ export const wildlife = [
         name: 'Szivárvány tukán', 
         image: tukanImage,
         description: 'Jellegzetes nagy csőrével az esőerdők egyik legismertebb madara. Fontos szerepet játszik a magok terjesztésében. A törvénytelen vadászat és az élőhelyek pusztulása fenyegeti.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -139,7 +139,7 @@ export const wildlife = [
         name: 'Hyacinth ara', 
         image: papagajImage,
         description: 'A világ legnagyobb repülő papagája, káprázatos kék tollazattal. A brazil esőerdők lakója, amelyet a kalitka-madár kereskedelem és élőhely-pusztítás veszélyeztet.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Brazil esőerdők'
     },
     { 
@@ -147,7 +147,7 @@ export const wildlife = [
         name: 'Jaguárundi', 
         image: jaguarundiImage,
         description: 'Közepes méretű vadmacska, amely a közép- és dél-amerikai esőerdőkben vadászik. Remek úszó és fára mászó. Az erdőirtás miatt élőhelyei töredezettek.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Amazonas és Közép-Amerika'
     },
     { 
@@ -155,7 +155,7 @@ export const wildlife = [
         name: 'Zöld anakonda', 
         image: zoldanakondaImage,
         description: 'A világ legnagyobb kígyója, amely elérheti a 9 méteres hosszúságot. Az amazóniai mocsarakban és folyókban vadászik. A vízi élőhelyek szennyeződése veszélyezteti.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -163,7 +163,7 @@ export const wildlife = [
         name: 'Ködfoltos leopárd', 
         image: kodfoltosleopardImage,
         description: 'Délkelet-Ázsia leggyönyörűbb vadmacskája, jellegzetes felhő-mintázatú bundájával. Kiváló fára mászó, aki az esőerdők lombkoronájában vadászik. Illegális kereskedelem áldozata.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Délkelet-ázsiai esőerdők'
     },
     { 
@@ -171,7 +171,7 @@ export const wildlife = [
         name: 'Kardcsőrű kolibri', 
         image: kardcsorukolibriImage,
         description: 'Az Andok esőerdeiben élő különleges kolibri, amelynek csőre hosszabb, mint teste. Speciális virágokból táplálkozik, így fontos beporzó. A klímaváltozás veszélyezteti.', 
-        form: 'animal',
+        type: 'animal',
         location: 'Andok felhőerdői'
     },
     { 
@@ -179,7 +179,7 @@ export const wildlife = [
         name: 'Viktória tavi rózsa', 
         image: viktoriatavirozsaImage,
         description: 'Az Amazonas medencéjének óriási vízinövénye, amelynek levelei elérik a 3 méteres átmérőt és akár 45 kg súlyt is elbírnak. Lenyűgöző éjszakai virágzása csupán két napig tart.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -187,7 +187,7 @@ export const wildlife = [
         name: 'Vanília orchidea', 
         image: vaniliaorchideaImage,
         description: 'A világ egyik legértékesebb fűszernövénye, amely csak az esőerdők lombkoronájában nő meg. Kézi beporzást igényel, és termesztése rendkívül munkaigényes.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Madagaszkár esőerdői'
     },
     { 
@@ -195,7 +195,7 @@ export const wildlife = [
         name: 'Kakaófa', 
         image: kakaofaImage,
         description: 'A csokoládé alapanyagát adó fa, amely csak az esőerdők árnyékos területein terem. Az egyoldalú ültetvények terjedése miatt az őshonos fajtái veszélyben vannak.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Amazonas és Nyugat-Afrika'
     },
     { 
@@ -203,7 +203,7 @@ export const wildlife = [
         name: 'Kék orchidea', 
         image: kekorchideaImage,
         description: 'Ritka és lenyűgöző szépségű orchidea faj, amely kizárólag a középső-amerikai felhőerdőkben található. A túlzott gyűjtés és élőhely-vesztés miatt veszélyeztetett.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Costa Rica felhőerdői'
     },
     { 
@@ -211,7 +211,7 @@ export const wildlife = [
         name: 'Majomkenyérfa', 
         image: majomkenyerfaImage,
         description: 'Chile ősi esőerdeinek magas fája, amelynek táplálékban gazdag diója fontos élelemforrás az állatok számára. A fakitermelés miatt erősen veszélyeztetett.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Chilei esőerdők'
     },
     { 
@@ -219,7 +219,7 @@ export const wildlife = [
         name: 'Gumifa', 
         image: gumifaImage,
         description: 'Az amazóniai gumifa természetes kaucsuk forrása, amely nélkül a modern világ elképzelhetetlen lenne. A túlzott kitermelés miatt jelentős csökkenés tapasztalható.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -227,7 +227,7 @@ export const wildlife = [
         name: 'Mahagóni fa', 
         image: mahagonifaImage,
         description: 'Az esőerdők egyik legértékesebb faanyagot adó fája, amelyet bútorok készítésére használnak. Az illegális fakitermelés a kihalás szélére sodorta.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Közép-Amerika és Nyugat-Afrika'
     },
     { 
@@ -235,7 +235,7 @@ export const wildlife = [
         name: 'Vad paprika', 
         image: vadpaprikaImage,
         description: 'Az összes paprikafajta őse, amely az amazóniai erdők alatti szintjén nő. Rendkívül csípős terméseivel segíti magjainak terjedését madarak által.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -243,7 +243,7 @@ export const wildlife = [
         name: 'Óriás liána', 
         image: lianaImage,
         description: 'Vastag, fára kúszó növény, amely életet ad az esőerdő függőleges világának. Akár 200 méter hosszúra is megnő, és fontos útként szolgál a lombkorona lakói számára.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Amazonas és Kongó-medence'
     },
     { 
@@ -251,7 +251,7 @@ export const wildlife = [
         name: 'Mohafa páfrány', 
         image: mohafapafranyImage,
         description: 'Ősi növény, amely már a dinoszauruszok korában is létezett. A felhőerdők párás környezetében nő, és a klímaváltozás miatt élőhelyei szűkülnek.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Andok és Új-Zéland esőerdői'
     },
     { 
@@ -259,7 +259,7 @@ export const wildlife = [
         name: 'Király páfrány', 
         image: kiralypafranyImage,
         description: 'Az esőerdők talajszintjének legnagyobb páfránya, amely akár 5 méter magas levelekkel rendelkezik. Az erdőirtás elsődleges áldozata, mivel csak ép erdőkben tud megélni.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Amazonas esőerdő'
     },
     { 
@@ -267,7 +267,7 @@ export const wildlife = [
         name: 'Kancsóka', 
         image: kancsokaImage,
         description: 'Borneó esőerdeinek különleges húsevő növénye, amely csapdaként működő levelekkel fogja be zsákmányát. Az élőhelyek elvesztése miatt számos faja veszélyeztetett.', 
-        form: 'plant',
+        type: 'plant',
         location: 'Borneó esőerdői'
     }
 ];
