@@ -313,6 +313,9 @@ a{
   .container-fluid div {
     margin: 0 auto;
   }
+  .navbar img {
+    display: none;
+  }
 }
 
 @media (max-width: 470px) {
