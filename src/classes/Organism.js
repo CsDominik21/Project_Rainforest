@@ -4,19 +4,22 @@ export default class Organism {
     #image;
     #location;
     #desc;
+    #type;
 
-    constructor(id, name, image, location, desc) {
+    constructor(id, name, image, location, desc, type) {
         this.#id = id;
         this.#name = name;
         this.#image = image;
         this.#location = location;
         this.#desc = desc;
+        this.#type = type;
 
         this.getId = this.getId.bind(this);
         this.getName = this.getName.bind(this);
         this.getImage = this.getImage.bind(this);
         this.getLocation = this.getLocation.bind(this);
         this.getDesc = this.getDesc.bind(this);
+        this.getType = this.getType.bind(this);
     }
 
     getId() {
@@ -37,5 +40,9 @@ export default class Organism {
 
     getDesc() {
         return this.#desc;
+    }
+
+    getType(){
+        return this.#type;
     }
 }
