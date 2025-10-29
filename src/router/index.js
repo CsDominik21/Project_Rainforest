@@ -3,6 +3,8 @@ import Index from "../pages/Index.vue";
 import Team from "../pages/Team.vue";
 import Quiz from "../pages/Quiz.vue";
 import TopDonators from "../pages/TopDonators.vue";
+import Animals from "../pages/Animals.vue";
+import Plants from "../pages/Plants.vue";
 const routes = [
     {
         path: '/',
@@ -19,6 +21,14 @@ const routes = [
     {
         path: '/top-donators',
         component: TopDonators
+    },
+    {
+        path: '/animals',
+        component: Animals
+    },
+    {
+        path: '/plants',
+        component: Plants
     }
 ];
 

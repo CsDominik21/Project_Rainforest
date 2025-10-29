@@ -36,8 +36,8 @@ const openModal = () => {
                 <i class="bi bi-leaf-fill"></i> Élővilág
               </a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="#">Állatok</a></li>
-                <li><a class="nav-link" href="#">Növények</a></li>
+                <li><router-link to="/animals" title="Animals"><a class="nav-link" href="#">Állatok</a></router-link></li>
+                <li><router-link to="/plants" title="Plants"><a class="nav-link" href="#">Növények</a></router-link></li>
               </ul>
             </li>
             <li class="nav-item" href="#">
