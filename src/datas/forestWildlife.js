@@ -11,7 +11,7 @@ import aranybekaImage from '../assets/aranybeka.jpg';
 import tapirImage from '../assets/tapir.jpg';
 import gorillaImage from '../assets/gorilla.jpg';
 import tukanImage from '../assets/tukan.jpg';
-import papagajImage from '../assets/papagaj.webp';
+import papagajImage from '../assets/papagaj.jpg';
 import jaguarundiImage from '../assets/jaguarundi.jpg';
 import zoldanakondaImage from '../assets/zold-anakonda.webp';
 import kodfoltosleopardImage from '../assets/kodfoltos-leopard.jpg';
