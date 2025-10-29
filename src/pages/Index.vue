@@ -17,6 +17,7 @@ const allOrganism = ref([]);
 const allRainforest = ref([]);
 const selectedWildlife = ref(null);
 const selectedForest = ref(null);
+const organismCount = 6;
 
 const scrollToRoles = () => {
     const rolesSection = document.querySelector('.roles');
@@ -38,8 +39,8 @@ const loadToDos = () => {
 }
 
 const loadWildlife = () => {
-    for (var i = 0; wildlife.length > i; i++) {
-        allOrganism.value.push(new Organism(wildlife[i].id, wildlife[i].name, wildlife[i].image, wildlife[i].count, wildlife[i].description, wildlife[i].type));
+    for (var i = 0; organismCount > i; i++) {
+        allOrganism.value.push(new Organism(wildlife[i].id, wildlife[i].name, wildlife[i].image, wildlife[i].location, wildlife[i].description, wildlife[i].type));
     }
 }
 
@@ -170,8 +171,8 @@ loadRainforest();
                         <h3 class="modal-title">{{ selectedWildlife.getName() }}</h3>
                         <p class="modal-description">{{ selectedWildlife.getDesc() }}</p>
                         <div class="modal-stats">
-                            <span class="modal-stat-label">Hátralevő egyedek:</span>
-                            <span class="modal-stat-value">{{ selectedWildlife.getCount() }}</span>
+                            <span class="modal-stat-label">Származási hely:</span>
+                            <span class="modal-stat-value">{{ selectedWildlife.getLocation() }}</span>
                         </div>
                         <button class="modal-button" @click="selectedWildlife = null">
                             Tudj meg többet
@@ -842,7 +843,7 @@ loadRainforest();
     background: rgba(36, 53, 36, 0.95);
     border: 1px solid rgba(144, 186, 146, 0.3);
     border-radius: 1.5rem;
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
     overflow: hidden;
     position: relative;
