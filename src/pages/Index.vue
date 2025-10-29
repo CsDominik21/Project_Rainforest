@@ -26,26 +26,26 @@ const scrollToRoles = () => {
 }
 
 const loadRoles = () => {
-    for(var i = 0; roles.length > i; i++){
-        allRole.value.push(new Role(roles[i].icon,roles[i].title,roles[i].description,roles[i].delay));
+    for (var i = 0; roles.length > i; i++) {
+        allRole.value.push(new Role(roles[i].icon, roles[i].title, roles[i].description, roles[i].delay));
     }
 }
 
 const loadToDos = () => {
-    for(var i = 0; toDos.length > i; i++){
-        allToDo.value.push(new ToDo(toDos[i].icon,toDos[i].title,toDos[i].description,toDos[i].delay));
+    for (var i = 0; toDos.length > i; i++) {
+        allToDo.value.push(new ToDo(toDos[i].icon, toDos[i].title, toDos[i].description, toDos[i].delay));
     }
 }
 
 const loadWildlife = () => {
-    for(var i = 0; wildlife.length > i; i++){
-        allOrganism.value.push(new Organism(wildlife[i].id,wildlife[i].name,wildlife[i].image,wildlife[i].count,wildlife[i].description));
+    for (var i = 0; wildlife.length > i; i++) {
+        allOrganism.value.push(new Organism(wildlife[i].id, wildlife[i].name, wildlife[i].image, wildlife[i].count, wildlife[i].description, wildlife[i].type));
     }
 }
 
 const loadRainforest = () => {
-    for(var i = 0; rainforests.length > i; i++){
-        allRainforest.value.push(new Rainforest(rainforests[i].id,rainforests[i].name,rainforests[i].left,rainforests[i].top,rainforests[i].image,rainforests[i].info,rainforests[i].region));
+    for (var i = 0; rainforests.length > i; i++) {
+        allRainforest.value.push(new Rainforest(rainforests[i].id, rainforests[i].name, rainforests[i].left, rainforests[i].top, rainforests[i].image, rainforests[i].info, rainforests[i].region));
     }
 }
 
@@ -61,7 +61,8 @@ loadRainforest();
         <div class="container">
             <h1 class="hero__title animate-float-up p-2">Esőőrség</h1>
             <p class="hero__subtitle animate-float-up">
-                Védd meg a Föld tüdejét, csatlakozz az esőerdők őrzőihez! Együtt megállíthatjuk az erdőirtást, óvhatjuk a természet kincseit, és biztosíthatjuk a jövő nemzedékeinek a zöldebb bolygót.
+                Védd meg a Föld tüdejét, csatlakozz az esőerdők őrzőihez! Együtt megállíthatjuk az erdőirtást, óvhatjuk
+                a természet kincseit, és biztosíthatjuk a jövő nemzedékeinek a zöldebb bolygót.
             </p>
             <button class="hero__cta animate-float-up" @click="scrollToRoles">
                 <span>Kezdjük el</span>
@@ -72,12 +73,15 @@ loadRainforest();
 
     <section class="roles">
         <div class="container">
-            <header class="roles__header">
+            <div class="roles__header">
                 <h2 class="roles__title animate-float-up">Az esőerdők szerepe</h2>
                 <p class="roles__description animate-float-up">
-                    Az esőerdők a Föld egyik legfontosabb ökoszisztémái, amelyek kulcsszerepet játszanak a globális éghajlat szabályozásában, az oxigéntermelésben és a szén-dioxid megkötésében. Emellett számos élőlény otthonai, valamint rengeteg gyógyszeralapanyag és nyersanyag forrásai. Az esőerdők megőrzése létfontosságú az emberiség és a bolygó jövője szempontjából.
+                    Az esőerdők a Föld egyik legfontosabb ökoszisztémái, amelyek kulcsszerepet játszanak a globális
+                    éghajlat szabályozásában, az oxigéntermelésben és a szén-dioxid megkötésében. Emellett számos
+                    élőlény otthonai, valamint rengeteg gyógyszeralapanyag és nyersanyag forrásai. Az esőerdők megőrzése
+                    létfontosságú az emberiség és a bolygó jövője szempontjából.
                 </p>
-            </header>
+            </div>
 
             <div class="roles__grid">
                 <article v-for="(role, index) in allRole" :key="index" class="role-card animate-fade-scale"
@@ -102,7 +106,7 @@ loadRainforest();
                     class="world-map" />
 
                 <div v-for="rainforest in allRainforest" :key="rainforest.getId()" class="forest-marker"
-                    :style="{ left: rainforest.getLeft(), top: rainforest.getTop() }" 
+                    :style="{ left: rainforest.getLeft(), top: rainforest.getTop() }"
                     @click="selectedForest = selectedForest?.getId() === rainforest.getId() ? null : rainforest">
                     <div class="marker-dot" :class="{ active: selectedForest?.getId() === rainforest.getId() }"></div>
                     <div class="marker-pulse"></div>
@@ -131,9 +135,10 @@ loadRainforest();
         <div class="container">
             <h2 class="wildlife-section__title">Élővilág</h2>
             <p class="wildlife-section__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc, in
-                lacinia risus. Integer tincidunt eget leo nec volutpat. Praesent eget vulputate arcu.
-                Nam non ex convallis, bibendum dolor in, ultrices elit.
+                Az esőerdők élővilága páratlanul gazdag, milliónyi növény és állatfaj otthona. Sajnos ez a gazdag
+                élővilág egyre nagyobb veszélyben van. Az erdőirtás, az élőhelyek pusztulása és a klímaváltozás miatt
+                rengeteg faj a kihalás szélére sodródott. Az esőerdők védelme így nemcsak a természet szépségének
+                megőrzését jelenti, hanem a Föld biológiai egyensúlyának fenntartását is.
             </p>
 
             <div class="wildlife-grid">
@@ -183,26 +188,26 @@ loadRainforest();
             <div class="cta-content">
                 <h2 class="cta-content__title">Teszteld a tudásod</h2>
                 <p class="cta-content__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec tincidunt nunc,
-                    in lacinia risus. Integer tincidunt eget leo nec volutpat. Praesent eget vulputate
-                    arcu. Nam non ex convallis, bibendum dolor in, ultrices elit.
+                    Próbáld ki, mennyit tudsz az esőerdőkről és élővilágukról! Kvízekkel ellenőrizheted a tudásodat, miközben új információkat is elsajátítasz.
                 </p>
-                <button class="cta-content__button">
-                    <span>Tovább</span>
-                    <i class="bi bi-arrow-right"></i>
-                </button>
+                <router-link to="/quiz" title="Quiz"><button class="cta-content__button">
+                        <span>Tovább</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </button></router-link>
             </div>
         </div>
     </section>
 
     <section class="roles">
         <div class="container">
-            <header class="roles__header">
+            <div class="roles__header">
                 <h2 class="roles__title animate-float-up">Mit tudsz tenni?</h2>
                 <p class="roles__description animate-float-up">
-                    Az esőerdők védelme mindannyiunk felelőssége. Minden apró lépés számít, a tudatos döntésektől kezdve a közösségi összefogásig. Támogasd a természetet, és legyél része a változásnak, amely megőrzi bolygónk zöld szívét!
+                    Az esőerdők védelme mindannyiunk felelőssége. Minden apró lépés számít, a tudatos döntésektől kezdve
+                    a közösségi összefogásig. Támogasd a természetet, és legyél része a változásnak, amely megőrzi
+                    bolygónk zöld szívét!
                 </p>
-            </header>
+            </div>
 
             <div class="roles__grid">
                 <article v-for="(todo, index) in allToDo" :key="index" class="role-card animate-fade-scale"
@@ -217,7 +222,7 @@ loadRainforest();
         </div>
     </section>
 
-    <ContactForm/>
+    <ContactForm />
 </template>
 
 <style scoped>
@@ -741,7 +746,7 @@ loadRainforest();
     font-size: clamp(1rem, 2vw, 1.1rem);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto 4rem;
     line-height: 1.8;
     padding-inline: 1rem;
