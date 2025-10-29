@@ -171,12 +171,25 @@ loadRainforest();
                         <h3 class="modal-title">{{ selectedWildlife.getName() }}</h3>
                         <p class="modal-description">{{ selectedWildlife.getDesc() }}</p>
                         <div class="modal-stats">
-                            <span class="modal-stat-label">Származási hely:</span>
-                            <span class="modal-stat-value">{{ selectedWildlife.getLocation() }}</span>
+                            <div>
+                                <span class="modal-stat-label">Származási hely:</span>
+                            </div>
+                            <div>
+                                <span class="modal-stat-value">{{ selectedWildlife.getLocation() }}</span>
+                            </div>
                         </div>
-                        <button class="modal-button" @click="selectedWildlife = null">
-                            Tudj meg többet
-                        </button>
+                        <div v-if="selectedWildlife.getType() == 'animal'">
+                            <router-link to="/animals" title="Animals"><button class="modal-button"
+                                    @click="selectedWildlife = null">
+                                    Több állat megtekintése
+                                </button></router-link>
+                        </div>
+                        <div v-else>
+                            <router-link to="/plants" title="Plants"><button class="modal-button"
+                                    @click="selectedWildlife = null">
+                                    Több növény megtekintése
+                                </button></router-link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -189,7 +202,8 @@ loadRainforest();
             <div class="cta-content">
                 <h2 class="cta-content__title">Teszteld a tudásod</h2>
                 <p class="cta-content__text">
-                    Próbáld ki, mennyit tudsz az esőerdőkről és élővilágukról! Kvízekkel ellenőrizheted a tudásodat, miközben új információkat is elsajátítasz.
+                    Próbáld ki, mennyit tudsz az esőerdőkről és élővilágukról! Kvízekkel ellenőrizheted a tudásodat,
+                    miközben új információkat is elsajátítasz.
                 </p>
                 <router-link to="/quiz" title="Quiz"><button class="cta-content__button">
                         <span>Tovább</span>
@@ -890,10 +904,10 @@ loadRainforest();
 }
 
 .modal-title {
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .modal-description {
@@ -911,18 +925,26 @@ loadRainforest();
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+}
+
+.modal-stats div{
+    margin: 0 auto;
+    text-align: center;
 }
 
 .modal-stat-label {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.7);
+    margin-right: 10px;
 }
 
 .modal-stat-value {
     font-size: 1.5rem;
     font-weight: 700;
     color: #90ba92;
+    margin-bottom: 2px;
 }
 
 .modal-button {
@@ -1153,6 +1175,14 @@ loadRainforest();
 
     .cta-section {
         padding: 6rem 0;
+    }
+
+    .modal-image {
+        display: none;
+    }
+
+    .modal-title {
+        text-align: center;
     }
 }
 </style>
