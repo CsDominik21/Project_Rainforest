@@ -326,9 +326,9 @@ loadRainforest();
 }
 
 .hero__title {
-    font-size: clamp(2.5rem, 8vw, 7rem);
+    font-size: clamp(40px, 8vw, 112px);
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     letter-spacing: -0.03em;
     background: linear-gradient(135deg, #ffffff 0%, #90ba92 100%);
     -webkit-background-clip: text;
@@ -338,8 +338,8 @@ loadRainforest();
 }
 
 .hero__subtitle {
-    font-size: clamp(1.05rem, 2vw, 1.35rem);
-    margin-bottom: 2.5rem;
+    font-size: clamp(16.8px, 2vw, 21.6px);
+    margin-bottom: 40px;
     max-width: 900px;
     margin-inline: auto;
     color: rgba(255, 255, 255, 0.9);
@@ -348,8 +348,8 @@ loadRainforest();
 }
 
 .hero__cta {
-    padding: 1.125rem 2.75rem;
-    font-size: 1.125rem;
+    padding: 18px 44px;
+    font-size: 18px;
     font-weight: 600;
     border: none;
     border-radius: 60px;
@@ -360,7 +360,7 @@ loadRainforest();
     box-shadow: 0 12px 35px -8px rgba(144, 186, 146, 0.5), 0 0 0 0 rgba(144, 186, 146, 0.4);
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 12px;
     position: relative;
     overflow: hidden;
 }
@@ -403,26 +403,26 @@ loadRainforest();
 
 .roles {
     background: linear-gradient(180deg, #1a251a 0%, #243524 50%, #25221a 100%);
-    padding: 8rem 0;
+    padding: 128px 0;
 }
 
 .roles__header {
     text-align: center;
-    margin-bottom: 5rem;
-    padding-inline: 1rem;
+    margin-bottom: 80px;
+    padding-inline: 16px;
 }
 
 .roles__title {
-    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-size: clamp(36px, 5vw, 64px);
     font-weight: 800;
     color: #ffffff;
-    margin-bottom: 1.25rem;
+    margin-bottom: 20px;
     letter-spacing: -0.03em;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .roles__description {
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    font-size: clamp(16.8px, 2vw, 19.2px);
     color: rgba(255, 255, 255, 0.7);
     max-width: 1100px;
     margin-inline: auto;
@@ -433,8 +433,8 @@ loadRainforest();
 .roles__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    padding-inline: 1rem;
+    gap: 40px;
+    padding-inline: 16px;
     max-width: 1200px;
     margin-inline: auto;
 }
@@ -442,8 +442,8 @@ loadRainforest();
 .role-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
-    padding: 3rem 2.5rem;
-    border-radius: 2rem;
+    padding: 48px 40px;
+    border-radius: 32px;
     text-align: center;
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     border: 1px solid rgba(144, 186, 146, 0.1);
@@ -455,7 +455,7 @@ loadRainforest();
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 2rem;
+    border-radius: 32px;
     padding: 2px;
     background: linear-gradient(135deg, #90ba92 0%, transparent 50%, #90ba92 100%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -480,7 +480,7 @@ loadRainforest();
 .role-card__icon {
     width: 90px;
     height: 90px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 32px;
     background: linear-gradient(135deg, #90ba92 0%, #6a9a6d 100%);
     border-radius: 50%;
     display: flex;
@@ -498,7 +498,7 @@ loadRainforest();
 }
 
 .role-card__icon i {
-    font-size: 2.25rem;
+    font-size: 36px;
     color: #243524;
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -508,10 +508,10 @@ loadRainforest();
 }
 
 .role-card__title {
-    font-size: 1.75rem;
+    font-size: 28px;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 1.125rem;
+    margin-bottom: 18px;
     letter-spacing: -0.01em;
     transition: color 0.4s ease;
 }
@@ -521,7 +521,7 @@ loadRainforest();
 }
 
 .role-card__text {
-    font-size: 1.05rem;
+    font-size: 16.8px;
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.7;
     margin: 0;
@@ -539,7 +539,7 @@ loadRainforest();
 
 .map-section {
     background: linear-gradient(180deg, #25221a 0%, #1a251a 100%);
-    padding: 8rem 0;
+    padding: 128px 0;
     position: relative;
     overflow: hidden;
 }
@@ -558,11 +558,11 @@ loadRainforest();
 }
 
 .map-section__title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(32px, 4vw, 48px);
     font-weight: 800;
     color: #ffffff;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 64px;
     letter-spacing: -0.02em;
 }
 
@@ -572,8 +572,8 @@ loadRainforest();
     position: relative;
     aspect-ratio: 2/1;
     background: rgba(255, 255, 255, 0.02);
-    border-radius: 2rem;
-    padding: 2rem;
+    border-radius: 32px;
+    padding: 32px;
     border: 1px solid rgba(144, 186, 146, 0.15);
 }
 
@@ -640,7 +640,7 @@ loadRainforest();
     transform: translate(-50%, -50%);
     background: rgba(36, 53, 36, 0.95);
     backdrop-filter: blur(20px);
-    border-radius: 1.5rem;
+    border-radius: 24px;
     overflow: hidden;
     width: min(350px, 90vw);
     max-width: 400px;
@@ -651,8 +651,8 @@ loadRainforest();
 
 .forest-info__close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 16px;
+    right: 16px;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -663,7 +663,7 @@ loadRainforest();
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 16px;
     transition: all 0.3s ease;
     z-index: 11;
 }
@@ -691,28 +691,28 @@ loadRainforest();
 }
 
 .forest-info__content {
-    padding: clamp(1rem, 3vw, 1.5rem);
+    padding: clamp(16px, 3vw, 24px);
 }
 
 .forest-info__region {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #90ba92;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     font-weight: 600;
 }
 
 .forest-info__name {
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-size: clamp(20px, 4vw, 24px);
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 0.75rem;
+    margin-bottom: 12px;
 }
 
 .forest-info__text {
-    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    font-size: clamp(13.6px, 2.5vw, 15.2px);
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.6;
     margin: 0;
@@ -745,33 +745,33 @@ loadRainforest();
 
 .wildlife-section {
     background: linear-gradient(180deg, #1a251a 0%, #243524 100%);
-    padding: 8rem 0;
+    padding: 128px 0;
 }
 
 .wildlife-section__title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(32px, 4vw, 48px);
     font-weight: 800;
     color: #ffffff;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     letter-spacing: -0.02em;
 }
 
 .wildlife-section__description {
-    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-size: clamp(16px, 2vw, 17.6px);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     max-width: 1100px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 64px;
     line-height: 1.8;
-    padding-inline: 1rem;
+    padding-inline: 16px;
 }
 
 .wildlife-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding-inline: 1rem;
+    gap: 32px;
+    padding-inline: 16px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -779,7 +779,7 @@ loadRainforest();
 .wildlife-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(144, 186, 146, 0.1);
-    border-radius: 1.5rem;
+    border-radius: 24px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -825,16 +825,16 @@ loadRainforest();
 }
 
 .wildlife-card__overlay i {
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #90ba92;
 }
 
 .wildlife-card__content {
-    padding: 1.5rem;
+    padding: 24px;
 }
 
 .wildlife-card__name {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 700;
     color: #ffffff;
     margin: 0;
@@ -850,13 +850,13 @@ loadRainforest();
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    padding: 1rem;
+    padding: 16px;
 }
 
 .modal-content {
     background: rgba(36, 53, 36, 0.95);
     border: 1px solid rgba(144, 186, 146, 0.3);
-    border-radius: 1.5rem;
+    border-radius: 24px;
     max-width: 600px;
     width: 100%;
     overflow: hidden;
@@ -865,8 +865,8 @@ loadRainforest();
 
 .modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 16px;
+    right: 16px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -877,7 +877,7 @@ loadRainforest();
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 20px;
     transition: all 0.3s ease;
     z-index: 10;
 }
@@ -900,7 +900,7 @@ loadRainforest();
 }
 
 .modal-body {
-    padding: 2rem;
+    padding: 32px;
 }
 
 .modal-title {
@@ -911,18 +911,18 @@ loadRainforest();
 }
 
 .modal-description {
-    font-size: 1rem;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
 }
 
 .modal-stats {
     background: rgba(144, 186, 146, 0.1);
     border: 1px solid rgba(144, 186, 146, 0.2);
-    border-radius: 0.75rem;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -935,13 +935,13 @@ loadRainforest();
 }
 
 .modal-stat-label {
-    font-size: 0.95rem;
+    font-size: 15.2px;
     color: rgba(255, 255, 255, 0.7);
     margin-right: 10px;
 }
 
 .modal-stat-value {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 700;
     color: #90ba92;
     margin-bottom: 2px;
@@ -949,12 +949,12 @@ loadRainforest();
 
 .modal-button {
     width: 100%;
-    padding: 1rem;
+    padding: 16px;
     background: linear-gradient(135deg, #90ba92 0%, #6a9a6d 100%);
     color: #243524;
     border: none;
-    border-radius: 0.75rem;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -995,7 +995,7 @@ loadRainforest();
 .cta-section {
     min-height: 100vh;
     background: linear-gradient(180deg, #243524 0%, #1a251a 100%);
-    padding: 10rem 0;
+    padding: 160px 0;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -1019,29 +1019,29 @@ loadRainforest();
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    padding-inline: 1rem;
+    padding-inline: 16px;
 }
 
 .cta-content__title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(40px, 6vw, 72px);
     font-weight: 800;
     color: #ffffff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     letter-spacing: -0.03em;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cta-content__text {
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-size: clamp(16.8px, 2vw, 20px);
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 40px;
     font-weight: 300;
 }
 
 .cta-content__button {
-    padding: 1.25rem 3rem;
-    font-size: 1.125rem;
+    padding: 20px 48px;
+    font-size: 18px;
     font-weight: 600;
     border: none;
     border-radius: 60px;
@@ -1052,7 +1052,7 @@ loadRainforest();
     box-shadow: 0 12px 35px -8px rgba(144, 186, 146, 0.5);
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 12px;
     position: relative;
     overflow: hidden;
 }
@@ -1099,38 +1099,38 @@ loadRainforest();
 
 @media (max-width: 768px) {
     .roles {
-        padding: 5rem 0;
+        padding: 80px 0;
     }
 
     .roles__grid {
-        gap: 2rem;
+        gap: 32px;
         grid-template-columns: 1fr;
     }
 
     .role-card {
-        padding: 2.5rem 2rem;
+        padding: 40px 32px;
     }
 
     .map-section {
-        padding: 5rem 0;
+        padding: 80px 0;
     }
 
     .map-container {
-        padding: 1rem;
-        border-radius: 1rem;
+        padding: 16px;
+        border-radius: 16px;
     }
 
     .forest-info {
         width: min(320px, 85vw);
-        border-radius: 1rem;
+        border-radius: 16px;
     }
 
     .forest-info__close {
         width: 32px;
         height: 32px;
-        font-size: 0.875rem;
-        top: 0.75rem;
-        right: 0.75rem;
+        font-size: 14px;
+        top: 12px;
+        right: 12px;
     }
 
     .forest-info__image {
@@ -1138,20 +1138,20 @@ loadRainforest();
     }
 
     .forest-info__content {
-        padding: 1rem;
+        padding: 16px;
     }
 
     .forest-info__region {
-        font-size: 0.65rem;
+        font-size: 10.4px;
     }
 
     .forest-info__name {
-        font-size: 1.125rem;
-        margin-bottom: 0.5rem;
+        font-size: 18px;
+        margin-bottom: 8px;
     }
 
     .forest-info__text {
-        font-size: 0.8rem;
+        font-size: 12.8px;
         line-height: 1.5;
     }
 
@@ -1165,16 +1165,16 @@ loadRainforest();
     }
 
     .wildlife-section {
-        padding: 5rem 0;
+        padding: 80px 0;
     }
 
     .wildlife-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 24px;
     }
 
     .cta-section {
-        padding: 6rem 0;
+        padding: 96px 0;
     }
 
     .modal-image {
