@@ -1,6 +1,5 @@
 <script setup>
 import ContactForm from '../components/ContactForm.vue';
-
 import { ref } from 'vue';
 import Role from '../classes/Role.js';
 import { roles } from '../datas/forestRoles.js';
@@ -58,14 +57,14 @@ loadRainforest();
 
 <template>
     <section class="hero">
-        <div class="hero__overlay"></div>
+        <div class="hero_overlay"></div>
         <div class="container">
-            <h1 class="hero__title animate-float-up p-2">Esőőrség</h1>
-            <p class="hero__subtitle animate-float-up">
+            <h1 class="hero_title animate-float-up p-2">Esőőrség</h1>
+            <p class="hero_subtitle animate-float-up">
                 Védd meg a Föld tüdejét, csatlakozz az esőerdők őrzőihez! Együtt megállíthatjuk az erdőirtást, óvhatjuk
                 a természet kincseit, és biztosíthatjuk a jövő nemzedékeinek a zöldebb bolygót.
             </p>
-            <button class="hero__cta animate-float-up" @click="scrollToRoles">
+            <button class="hero_cta animate-float-up" @click="scrollToRoles">
                 <span>Kezdjük el</span>
                 <i class="bi bi-arrow-right"></i>
             </button>
@@ -74,9 +73,9 @@ loadRainforest();
 
     <section class="roles">
         <div class="container">
-            <div class="roles__header">
-                <h2 class="roles__title animate-float-up">Az esőerdők szerepe</h2>
-                <p class="roles__description animate-float-up">
+            <div class="roles_header">
+                <h2 class="roles_title animate-float-up">Az esőerdők szerepe</h2>
+                <p class="roles_description animate-float-up">
                     Az esőerdők a Föld egyik legfontosabb ökoszisztémái, amelyek kulcsszerepet játszanak a globális
                     éghajlat szabályozásában, az oxigéntermelésben és a szén-dioxid megkötésében. Emellett számos
                     élőlény otthonai, valamint rengeteg gyógyszeralapanyag és nyersanyag forrásai. Az esőerdők megőrzése
@@ -84,23 +83,23 @@ loadRainforest();
                 </p>
             </div>
 
-            <div class="roles__grid">
+            <div class="roles_grid">
                 <article v-for="(role, index) in allRole" :key="index" class="role-card animate-fade-scale"
                     :style="{ animationDelay: role.getDelay() }">
-                    <div class="role-card__icon">
+                    <div class="role-card_icon">
                         <i :class="role.getIcon()" aria-hidden="true"></i>
                     </div>
-                    <h3 class="role-card__title">{{ role.getTitle() }}</h3>
-                    <p class="role-card__text">{{ role.getDesc() }}</p>
+                    <h3 class="role-card_title">{{ role.getTitle() }}</h3>
+                    <p class="role-card_text">{{ role.getDesc() }}</p>
                 </article>
             </div>
         </div>
     </section>
 
     <section class="map-section">
-        <div class="map-section__bg"></div>
+        <div class="map-section_bg"></div>
         <div class="container">
-            <h2 class="map-section__title">Világ esőerdői</h2>
+            <h2 class="map-section_title">Világ esőerdői</h2>
 
             <div class="map-container">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Simple_world_map.svg" alt="World Map"
@@ -115,16 +114,16 @@ loadRainforest();
 
                 <Transition name="fade-slide">
                     <div v-if="selectedForest" class="forest-info" :key="selectedForest.getId()">
-                        <button class="forest-info__close" @click.stop="selectedForest = null">
+                        <button class="forest-info_close" @click.stop="selectedForest = null">
                             <i class="bi bi-x-lg"></i>
                         </button>
-                        <div class="forest-info__image">
+                        <div class="forest-info_image">
                             <img :src="selectedForest.getImage()" :alt="selectedForest.getName()">
                         </div>
-                        <div class="forest-info__content">
-                            <span class="forest-info__region">{{ selectedForest.getRegion() }}</span>
-                            <h3 class="forest-info__name">{{ selectedForest.getName() }}</h3>
-                            <p class="forest-info__text">{{ selectedForest.getInfo() }}</p>
+                        <div class="forest-info_content">
+                            <span class="forest-info_region">{{ selectedForest.getRegion() }}</span>
+                            <h3 class="forest-info_name">{{ selectedForest.getName() }}</h3>
+                            <p class="forest-info_text">{{ selectedForest.getInfo() }}</p>
                         </div>
                     </div>
                 </Transition>
@@ -134,8 +133,8 @@ loadRainforest();
 
     <section class="wildlife-section">
         <div class="container">
-            <h2 class="wildlife-section__title">Élővilág</h2>
-            <p class="wildlife-section__description">
+            <h2 class="wildlife-section_title">Élővilág</h2>
+            <p class="wildlife-section_description">
                 Az esőerdők élővilága páratlanul gazdag, milliónyi növény és állatfaj otthona. Sajnos ez a gazdag
                 élővilág egyre nagyobb veszélyben van. Az erdőirtás, az élőhelyek pusztulása és a klímaváltozás miatt
                 rengeteg faj a kihalás szélére sodródott. Az esőerdők védelme így nemcsak a természet szépségének
@@ -145,14 +144,14 @@ loadRainforest();
             <div class="wildlife-grid">
                 <article v-for="organism in allOrganism" :key="organism.getId()" class="wildlife-card"
                     @click="selectedWildlife = organism">
-                    <div class="wildlife-card__image">
+                    <div class="wildlife-card_image">
                         <img :src="organism.getImage()" :alt="organism.getName()">
-                        <div class="wildlife-card__overlay">
+                        <div class="wildlife-card_overlay">
                             <i class="bi bi-plus-lg"></i>
                         </div>
                     </div>
-                    <div class="wildlife-card__content">
-                        <h3 class="wildlife-card__name">{{ organism.getName() }}</h3>
+                    <div class="wildlife-card_content">
+                        <h3 class="wildlife-card_name">{{ organism.getName() }}</h3>
                     </div>
                 </article>
             </div>
@@ -197,15 +196,15 @@ loadRainforest();
     </section>
 
     <section class="cta-section">
-        <div class="cta-section__bg"></div>
+        <div class="cta-section_bg"></div>
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-content__title">Teszteld a tudásod</h2>
-                <p class="cta-content__text">
+                <h2 class="cta-content_title">Teszteld a tudásod</h2>
+                <p class="cta-content_text">
                     Próbáld ki, mennyit tudsz az esőerdőkről és élővilágukról! Kvízekkel ellenőrizheted a tudásodat,
                     miközben új információkat is elsajátítasz.
                 </p>
-                <router-link to="/quiz" title="Quiz"><button class="cta-content__button">
+                <router-link to="/quiz" title="Quiz"><button class="cta-content_button">
                         <span>Tovább</span>
                         <i class="bi bi-arrow-right"></i>
                     </button></router-link>
@@ -215,23 +214,23 @@ loadRainforest();
 
     <section class="roles">
         <div class="container">
-            <div class="roles__header">
-                <h2 class="roles__title animate-float-up">Mit tudsz tenni?</h2>
-                <p class="roles__description animate-float-up">
+            <div class="roles_header">
+                <h2 class="roles_title animate-float-up">Mit tudsz tenni?</h2>
+                <p class="roles_description animate-float-up">
                     Az esőerdők védelme mindannyiunk felelőssége. Minden apró lépés számít, a tudatos döntésektől kezdve
                     a közösségi összefogásig. Támogasd a természetet, és legyél része a változásnak, amely megőrzi
                     bolygónk zöld szívét!
                 </p>
             </div>
 
-            <div class="roles__grid">
+            <div class="roles_grid">
                 <article v-for="(todo, index) in allToDo" :key="index" class="role-card animate-fade-scale"
                     :style="{ animationDelay: todo.getDelay() }">
-                    <div class="role-card__icon">
+                    <div class="role-card_icon">
                         <i :class="todo.getIcon()" aria-hidden="true"></i>
                     </div>
-                    <h3 class="role-card__title">{{ todo.getTitle() }}</h3>
-                    <p class="role-card__text">{{ todo.getDesc() }}</p>
+                    <h3 class="role-card_title">{{ todo.getTitle() }}</h3>
+                    <p class="role-card_text">{{ todo.getDesc() }}</p>
                 </article>
             </div>
         </div>
@@ -313,7 +312,7 @@ loadRainforest();
     overflow: hidden;
 }
 
-.hero__overlay {
+.hero_overlay {
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse at center, rgba(36, 53, 36, 0.7) 0%, rgba(36, 53, 36, 0.95) 100%);
@@ -325,7 +324,7 @@ loadRainforest();
     z-index: 2;
 }
 
-.hero__title {
+.hero_title {
     font-size: clamp(40px, 8vw, 112px);
     font-weight: 800;
     margin-bottom: 24px;
@@ -337,7 +336,7 @@ loadRainforest();
     filter: drop-shadow(0 4px 12px rgba(144, 186, 146, 0.3));
 }
 
-.hero__subtitle {
+.hero_subtitle {
     font-size: clamp(16.8px, 2vw, 21.6px);
     margin-bottom: 40px;
     max-width: 900px;
@@ -347,7 +346,7 @@ loadRainforest();
     font-weight: 300;
 }
 
-.hero__cta {
+.hero_cta {
     padding: 18px 44px;
     font-size: 18px;
     font-weight: 600;
@@ -365,7 +364,7 @@ loadRainforest();
     overflow: hidden;
 }
 
-.hero__cta::before {
+.hero_cta::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -374,30 +373,30 @@ loadRainforest();
     transition: opacity 0.4s ease;
 }
 
-.hero__cta span,
-.hero__cta i {
+.hero_cta span,
+.hero_cta i {
     position: relative;
     z-index: 1;
 }
 
-.hero__cta i {
+.hero_cta i {
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.hero__cta:hover {
+.hero_cta:hover {
     transform: translateY(-3px);
     box-shadow: 0 20px 45px -8px rgba(144, 186, 146, 0.6), 0 0 0 8px rgba(144, 186, 146, 0.15);
 }
 
-.hero__cta:hover::before {
+.hero_cta:hover::before {
     opacity: 1;
 }
 
-.hero__cta:hover i {
+.hero_cta:hover i {
     transform: translateX(4px);
 }
 
-.hero__cta:active {
+.hero_cta:active {
     transform: translateY(-1px);
 }
 
@@ -406,13 +405,13 @@ loadRainforest();
     padding: 128px 0;
 }
 
-.roles__header {
+.roles_header {
     text-align: center;
     margin-bottom: 80px;
     padding-inline: 16px;
 }
 
-.roles__title {
+.roles_title {
     font-size: clamp(36px, 5vw, 64px);
     font-weight: 800;
     color: #ffffff;
@@ -421,7 +420,7 @@ loadRainforest();
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.roles__description {
+.roles_description {
     font-size: clamp(16.8px, 2vw, 19.2px);
     color: rgba(255, 255, 255, 0.7);
     max-width: 1100px;
@@ -430,7 +429,7 @@ loadRainforest();
     font-weight: 300;
 }
 
-.roles__grid {
+.roles_grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
@@ -477,7 +476,7 @@ loadRainforest();
     opacity: 1;
 }
 
-.role-card__icon {
+.role-card_icon {
     width: 90px;
     height: 90px;
     margin: 0 auto 32px;
@@ -492,22 +491,22 @@ loadRainforest();
     z-index: 1;
 }
 
-.role-card:hover .role-card__icon {
+.role-card:hover .role-card_icon {
     transform: scale(1.15) rotate(-5deg);
     box-shadow: 0 15px 40px -8px rgba(144, 186, 146, 0.7), inset 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.role-card__icon i {
+.role-card_icon i {
     font-size: 36px;
     color: #243524;
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.role-card:hover .role-card__icon i {
+.role-card:hover .role-card_icon i {
     transform: scale(1.1);
 }
 
-.role-card__title {
+.role-card_title {
     font-size: 28px;
     font-weight: 700;
     color: #ffffff;
@@ -516,11 +515,11 @@ loadRainforest();
     transition: color 0.4s ease;
 }
 
-.role-card:hover .role-card__title {
+.role-card:hover .role-card_title {
     color: #90ba92;
 }
 
-.role-card__text {
+.role-card_text {
     font-size: 16.8px;
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.7;
@@ -529,11 +528,11 @@ loadRainforest();
     transition: color 0.4s ease;
 }
 
-.role-card:hover .role-card__text {
+.role-card:hover .role-card_text {
     color: rgba(255, 255, 255, 0.85);
 }
 
-.role-card:hover .role-card__text {
+.role-card:hover .role-card_text {
     color: rgba(255, 255, 255, 0.85);
 }
 
@@ -544,7 +543,7 @@ loadRainforest();
     overflow: hidden;
 }
 
-.map-section__bg {
+.map-section_bg {
     position: absolute;
     inset: 0;
     background: url(../assets/map-bg.jpg) center/cover fixed;
@@ -557,7 +556,7 @@ loadRainforest();
     z-index: 1;
 }
 
-.map-section__title {
+.map-section_title {
     font-size: clamp(32px, 4vw, 48px);
     font-weight: 800;
     color: #ffffff;
@@ -649,7 +648,7 @@ loadRainforest();
     z-index: 10;
 }
 
-.forest-info__close {
+.forest-info_close {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -668,33 +667,33 @@ loadRainforest();
     z-index: 11;
 }
 
-.forest-info__close:hover {
+.forest-info_close:hover {
     background: rgba(144, 186, 146, 0.3);
     transform: rotate(90deg);
 }
 
-.forest-info__image {
+.forest-info_image {
     width: 100%;
     height: clamp(150px, 40vw, 200px);
     overflow: hidden;
 }
 
-.forest-info__image img {
+.forest-info_image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.forest-info:hover .forest-info__image img {
+.forest-info:hover .forest-info_image img {
     transform: scale(1.05);
 }
 
-.forest-info__content {
+.forest-info_content {
     padding: clamp(16px, 3vw, 24px);
 }
 
-.forest-info__region {
+.forest-info_region {
     display: inline-block;
     font-size: 12px;
     text-transform: uppercase;
@@ -704,14 +703,14 @@ loadRainforest();
     font-weight: 600;
 }
 
-.forest-info__name {
+.forest-info_name {
     font-size: clamp(20px, 4vw, 24px);
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 12px;
 }
 
-.forest-info__text {
+.forest-info_text {
     font-size: clamp(13.6px, 2.5vw, 15.2px);
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.6;
@@ -748,7 +747,7 @@ loadRainforest();
     padding: 128px 0;
 }
 
-.wildlife-section__title {
+.wildlife-section_title {
     font-size: clamp(32px, 4vw, 48px);
     font-weight: 800;
     color: #ffffff;
@@ -757,7 +756,7 @@ loadRainforest();
     letter-spacing: -0.02em;
 }
 
-.wildlife-section__description {
+.wildlife-section_description {
     font-size: clamp(16px, 2vw, 17.6px);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
@@ -791,25 +790,25 @@ loadRainforest();
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.wildlife-card__image {
+.wildlife-card_image {
     position: relative;
     aspect-ratio: 4/3;
     overflow: hidden;
     background: rgba(144, 186, 146, 0.1);
 }
 
-.wildlife-card__image img {
+.wildlife-card_image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
 
-.wildlife-card:hover .wildlife-card__image img {
+.wildlife-card:hover .wildlife-card_image img {
     transform: scale(1.1);
 }
 
-.wildlife-card__overlay {
+.wildlife-card_overlay {
     position: absolute;
     inset: 0;
     background: rgba(36, 53, 36, 0.8);
@@ -820,20 +819,20 @@ loadRainforest();
     transition: opacity 0.3s ease;
 }
 
-.wildlife-card:hover .wildlife-card__overlay {
+.wildlife-card:hover .wildlife-card_overlay {
     opacity: 1;
 }
 
-.wildlife-card__overlay i {
+.wildlife-card_overlay i {
     font-size: 40px;
     color: #90ba92;
 }
 
-.wildlife-card__content {
+.wildlife-card_content {
     padding: 24px;
 }
 
-.wildlife-card__name {
+.wildlife-card_name {
     font-size: 24px;
     font-weight: 700;
     color: #ffffff;
@@ -1002,7 +1001,7 @@ loadRainforest();
     align-items: center;
 }
 
-.cta-section__bg {
+.cta-section_bg {
     position: absolute;
     inset: 0;
     background: url(../assets/leaves-bg.jpg) center/cover fixed;
@@ -1022,7 +1021,7 @@ loadRainforest();
     padding-inline: 16px;
 }
 
-.cta-content__title {
+.cta-content_title {
     font-size: clamp(40px, 6vw, 72px);
     font-weight: 800;
     color: #ffffff;
@@ -1031,7 +1030,7 @@ loadRainforest();
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.cta-content__text {
+.cta-content_text {
     font-size: clamp(16.8px, 2vw, 20px);
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
@@ -1039,7 +1038,7 @@ loadRainforest();
     font-weight: 300;
 }
 
-.cta-content__button {
+.cta-content_button {
     padding: 20px 48px;
     font-size: 18px;
     font-weight: 600;
@@ -1057,7 +1056,7 @@ loadRainforest();
     overflow: hidden;
 }
 
-.cta-content__button::before {
+.cta-content_button::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -1066,34 +1065,34 @@ loadRainforest();
     transition: opacity 0.4s ease;
 }
 
-.cta-content__button span,
-.cta-content__button i {
+.cta-content_button span,
+.cta-content_button i {
     position: relative;
     z-index: 1;
 }
 
-.cta-content__button i {
+.cta-content_button i {
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.cta-content__button:hover {
+.cta-content_button:hover {
     transform: translateY(-3px);
     box-shadow: 0 20px 45px -8px rgba(144, 186, 146, 0.6);
 }
 
-.cta-content__button:hover::before {
+.cta-content_button:hover::before {
     opacity: 1;
 }
 
-.cta-content__button:hover i {
+.cta-content_button:hover i {
     transform: translateX(4px);
 }
 
-.cta-content__button:active {
+.cta-content_button:active {
     transform: translateY(-1px);
 }
 
-.cta-content__button:active {
+.cta-content_button:active {
     transform: translateY(-1px);
 }
 
@@ -1102,7 +1101,7 @@ loadRainforest();
         padding: 80px 0;
     }
 
-    .roles__grid {
+    .roles_grid {
         gap: 32px;
         grid-template-columns: 1fr;
     }
@@ -1125,7 +1124,7 @@ loadRainforest();
         border-radius: 16px;
     }
 
-    .forest-info__close {
+    .forest-info_close {
         width: 32px;
         height: 32px;
         font-size: 14px;
@@ -1133,24 +1132,24 @@ loadRainforest();
         right: 12px;
     }
 
-    .forest-info__image {
+    .forest-info_image {
         height: clamp(120px, 35vw, 150px);
     }
 
-    .forest-info__content {
+    .forest-info_content {
         padding: 16px;
     }
 
-    .forest-info__region {
+    .forest-info_region {
         font-size: 10.4px;
     }
 
-    .forest-info__name {
+    .forest-info_name {
         font-size: 18px;
         margin-bottom: 8px;
     }
 
-    .forest-info__text {
+    .forest-info_text {
         font-size: 12.8px;
         line-height: 1.5;
     }
