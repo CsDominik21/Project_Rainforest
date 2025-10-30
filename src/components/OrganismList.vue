@@ -65,7 +65,7 @@ loadOrganisms();
             <h1 class="hero_title animate-float-up p-2">{{ title }}</h1>
             <p class="hero_subtitle animate-float-up">{{ subtitle }}</p>
             <button class="hero_cta animate-float-up" @click="scrollToOrganismsSection">
-                <span>Kezdjük el</span>
+                <span>Felfedezés</span>
                 <i class="bi bi-arrow-right"></i>
             </button>
         </div>
