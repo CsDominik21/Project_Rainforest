@@ -450,20 +450,6 @@ loadRainforest();
     overflow: hidden;
 }
 
-.role-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 32px;
-    padding: 2px;
-    background: linear-gradient(135deg, #90ba92 0%, transparent 50%, #90ba92 100%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
 .role-card:hover {
     transform: translateY(-16px) scale(1.02);
     background: rgba(255, 255, 255, 0.06);
