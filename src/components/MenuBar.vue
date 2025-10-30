@@ -27,26 +27,26 @@ const openModal = () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item" href="#">
+            <li class="nav-item">
               <router-link to="/" title="Index"><a class="nav-link active" aria-current="page"><i class="bi bi-house-fill"></i>
                 Főoldal</a></router-link>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="#">
+              <a class="nav-link">
                 <i class="bi bi-leaf-fill"></i> Élővilág
               </a>
               <ul class="dropdown-menu">
-                <li><router-link to="/animals" title="Animals"><a class="nav-link" href="#">Állatok</a></router-link></li>
-                <li><router-link to="/plants" title="Plants"><a class="nav-link" href="#">Növények</a></router-link></li>
+                <li><router-link to="/animals" title="Animals"><a class="nav-link">Állatok</a></router-link></li>
+                <li><router-link to="/plants" title="Plants"><a class="nav-link">Növények</a></router-link></li>
               </ul>
             </li>
-            <li class="nav-item" href="#">
+            <li class="nav-item">
               <router-link to="/quiz" title="Quiz"><a class="nav-link"><i class="bi bi-card-checklist"></i> Kvíz</a></router-link>
             </li>
-            <li class="nav-item" href="#">
+            <li class="nav-item">
               <router-link to="/csapatunk" title="Csapatunk"><a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a></router-link>
             </li>
-            <li class="nav-item" href="#">
+            <li class="nav-item">
               <a class="nav-link" @click="openModal">Támogass minket</a>
             </li>
           </ul>
