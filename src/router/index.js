@@ -5,6 +5,7 @@ import Quiz from "../pages/Quiz.vue";
 import TopDonators from "../pages/TopDonators.vue";
 import Animals from "../pages/Animals.vue";
 import Plants from "../pages/Plants.vue";
+
 const routes = [
     {
         path: '/',
@@ -33,7 +34,24 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(), routes
-})
+    history: createWebHistory(), routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        }
+        else if (to.hash) {
+            return {
+                el: to.hash,
+                behavior: 'smooth',
+            };
+        }
+        else {
+            return { 
+                top: 0, 
+                behavior: 'smooth' 
+            };
+        }
+    }
+});
 
-export default router;  
+export default router;
