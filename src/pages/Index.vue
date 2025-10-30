@@ -9,6 +9,7 @@ import Organism from '../classes/Organism.js';
 import { wildlife } from '../datas/forestWildlife.js';
 import Rainforest from '../classes/Rainforest.js';
 import { rainforests } from '../datas/rainforests.js';
+import { scrollToSection } from '../utils/scrollToSection.js';
 
 const allRole = ref([]);
 const allToDo = ref([]);
@@ -19,10 +20,7 @@ const selectedForest = ref(null);
 const organismCount = 6;
 
 const scrollToRoles = () => {
-    const rolesSection = document.querySelector('.roles');
-    if (rolesSection) {
-        rolesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    scrollToSection('.roles');
 }
 
 const loadRoles = () => {
@@ -264,32 +262,6 @@ loadRainforest();
     }
 }
 
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(10px);
-    }
-}
-
-@keyframes glowPulse {
-
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.6;
-        transform: scale(1.1);
-    }
-}
-
 .animate-float-up {
     opacity: 0;
     animation: floatUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -300,104 +272,8 @@ loadRainforest();
     animation: fadeScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
+.hero{
     background: url(../assets/hero-bg.jpeg) center/cover fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero_overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(36, 53, 36, 0.7) 0%, rgba(36, 53, 36, 0.95) 100%);
-    z-index: 1;
-}
-
-.hero .container {
-    position: relative;
-    z-index: 2;
-}
-
-.hero_title {
-    font-size: clamp(40px, 8vw, 112px);
-    font-weight: 800;
-    margin-bottom: 24px;
-    letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #ffffff 0%, #90ba92 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 4px 12px rgba(144, 186, 146, 0.3));
-}
-
-.hero_subtitle {
-    font-size: clamp(16.8px, 2vw, 21.6px);
-    margin-bottom: 40px;
-    max-width: 900px;
-    margin-inline: auto;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.7;
-    font-weight: 300;
-}
-
-.hero_cta {
-    padding: 18px 44px;
-    font-size: 18px;
-    font-weight: 600;
-    border: none;
-    border-radius: 60px;
-    background: linear-gradient(135deg, #90ba92 0%, #6a9a6d 100%);
-    color: #243524;
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 12px 35px -8px rgba(144, 186, 146, 0.5), 0 0 0 0 rgba(144, 186, 146, 0.4);
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero_cta::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #a8d4aa 0%, #90ba92 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.hero_cta span,
-.hero_cta i {
-    position: relative;
-    z-index: 1;
-}
-
-.hero_cta i {
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.hero_cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 45px -8px rgba(144, 186, 146, 0.6), 0 0 0 8px rgba(144, 186, 146, 0.15);
-}
-
-.hero_cta:hover::before {
-    opacity: 1;
-}
-
-.hero_cta:hover i {
-    transform: translateX(4px);
-}
-
-.hero_cta:active {
-    transform: translateY(-1px);
 }
 
 .roles {
