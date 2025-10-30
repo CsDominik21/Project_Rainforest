@@ -44,7 +44,7 @@ const openModal = () => {
               <router-link to="/quiz" title="Quiz"><a class="nav-link"><i class="bi bi-card-checklist"></i> Kvíz</a></router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/csapatunk" title="Csapatunk"><a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a></router-link>
+              <router-link to="/team" title="Team"><a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a></router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link" @click="openModal">Támogass minket</a>

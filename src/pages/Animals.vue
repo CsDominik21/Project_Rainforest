@@ -11,3 +11,5 @@ import animalsBackground from '../assets/animals-bg.jpg';
     subtitle="Fedezd fel az esőerdők csodálatos állatvilágát! Az itt élő fajok sokszínűsége páratlan, minden egyes lény fontos szerepet játszik az ökoszisztéma egyensúlyában."
   />
 </template>
+
+<style></style>

@@ -12,7 +12,7 @@ const routes = [
         component: Index
     },
     {
-        path: '/csapatunk',
+        path: '/team',
         component: Team
     },
     {

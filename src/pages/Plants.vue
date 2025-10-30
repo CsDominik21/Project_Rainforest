@@ -11,3 +11,5 @@ import plantsBackground from '../assets/plants-bg.jpg';
     subtitle="Fedezd fel az esőerdők lenyűgöző növényvilágát! Ezek a növények biztosítják az ökoszisztéma alapját és otthont adnak számtalan élőlénynek."
   />
 </template>
+
+<style></style>
