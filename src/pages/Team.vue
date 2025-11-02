@@ -90,6 +90,7 @@ loadMembers();
 .team-page {
   overflow-x: hidden;
   max-width: 100vw;
+  background: linear-gradient(180deg, #1a251a 0%, #243524 50%, #25221a 100%);
 }
 
 .hero{
