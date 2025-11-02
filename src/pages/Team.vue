@@ -1,60 +1,75 @@
 <script setup>
 import ContactForm from '../components/ContactForm.vue';
-const teamMembers = [
-  {
-    name: 'Csöllei Dominik',
-    role: 'Faőrző főnök',
-    email: 'csollei.dominik.2021i@bankitatabanya.hu',
-    phone: '+36 30 123 4312'
-  },
-  {
-    name: 'Balogh Máté',
-    role: 'Facsemete felügyelő',
-    email: 'balogh.mate.2021i@bankitatabanya.hu',
-    phone: '+36 30 456 7890'
-  }
-];
+import { scrollToSection } from '../utils/scrollToSection';
+import { teamMembers } from '../datas/team';
+import Member from '../classes/Member';
+import { ref } from 'vue';
+
+const team = ref([]);
+
+const loadMembers = () => {
+    for (var i = 0; teamMembers.length > i; i++) {
+        team.value.push(
+            new Member(
+                teamMembers[i].name, 
+                teamMembers[i].role, 
+                teamMembers[i].email, 
+                teamMembers[i].phone,
+                teamMembers[i].image
+            )
+        );
+    }
+}
+
+const scrollToRoles = () => {
+    scrollToSection('.team');
+}
+
+loadMembers();
 </script>
 
 <template>
-  <div class="team-page">
     <section class="hero">
-      <div class="hero__overlay"></div>
-      <div class="container">
-        <h1 class="hero__title p-3">Csapatunk</h1>
-        <p class="hero__subtitle">
-          Hiszünk a közös munkában és az innovációban. Csapatunkat a szenvedély
-          és a szakértelem hajtja, hogy mindig a legjobb megoldásokat nyújtsuk.
-        </p>
-      </div>
+        <div class="hero_overlay"></div>
+        <div class="container">
+            <h1 class="hero_title animate-float-up p-2">Csapatunk</h1>
+            <p class="hero_subtitle animate-float-up">
+                Hiszünk a közös munkában és az innovációban. Csapatunkat a szenvedély
+                és a szakértelem hajtja, hogy mindig a legjobb megoldásokat nyújtsuk.
+            </p>
+            <button class="hero_cta animate-float-up" @click="scrollToRoles">
+                <span>Megtekintés</span>
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
     </section>
 
+  <div class="team-page">
     <section class="team">
       <div class="container">
-        <h2 class="team__title">Több mint egy csapat</h2>
-        <p class="team__description">
+        <h2 class="team_title">Több mint egy csapat</h2>
+        <p class="team_description">
           Ismerj meg minket! Minden tagunk egyedi tapasztalatot és szakértelmet hoz.
         </p>
 
-        <div class="team__grid">
-          <article v-for="(member, index) in teamMembers" :key="index" class="member-card">
-            <div class="member-card__image">
-              <img src="../assets/Bmate.png" :alt="member.name" v-if="index == 1"/>
-              <img src="../assets/Csdomi.png" :alt="member.name" v-else/>
+        <div class="team_grid">
+          <article v-for="(member, index) in team" :key="index" class="member-card">
+            <div class="member-card_image">
+              <img :src="member.getImage()" :alt="member.getName()"/>
             </div>
-            <h3 class="member-card__name">{{ member.name }}</h3>
-            <p class="member-card__role">{{ member.role }}</p>
+            <h3 class="member-card_name">{{ member.getName() }}</h3>
+            <p class="member-card_role">{{ member.getRole() }}</p>
             
-            <div class="member-card__divider"></div>
+            <div class="member-card_divider"></div>
             
-            <div class="member-card__contact">
+            <div class="member-card_contact">
               <div class="contact-item">
                 <i class="bi bi-envelope-fill"></i>
-                <a :href="`mailto:${member.email}`">{{ member.email }}</a>
+                <a :href="`mailto:${member.getEmail()}`">{{ member.getEmail() }}</a>
               </div>
               <div class="contact-item">
                 <i class="bi bi-telephone-fill"></i>
-                <a :href="`tel:${member.phone}`">{{ member.phone }}</a>
+                <a :href="`tel:${member.getPhone()}`">{{ member.getPhone() }}</a>
               </div>
             </div>
           </article>
@@ -72,22 +87,13 @@ const teamMembers = [
   box-sizing: border-box;
 }
 
-
-.hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  background: url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop) center/cover;
-  position: relative;
+.team-page {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(36, 53, 36, 0.85);
+.hero{
+    background: url(../assets/team.jpg) center/cover fixed;
 }
 
 .container {
@@ -95,67 +101,61 @@ const teamMembers = [
   z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.hero__title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #90ba92 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-}
-
-.hero__subtitle {
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  max-width: 650px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.7;
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .team {
   background: linear-gradient(180deg, #1a251a 0%, #243524 100%);
-  padding: 6rem 2rem;
+  padding: 96px 32px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
-.team__title {
-  font-size: clamp(2.25rem, 5vw, 4rem);
+.team_title {
+  font-size: clamp(36px, 5vw, 64px);
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   text-align: center;
 }
 
-.team__description {
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
+.team_description {
+  font-size: clamp(17px, 2vw, 19px);
   color: rgba(255, 255, 255, 0.7);
   max-width: 680px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 64px;
   line-height: 1.8;
   text-align: center;
 }
 
-.team__grid {
+.team_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 }
 
+@media (max-width: 350px) {
+  .team_grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .member-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  padding: 3rem 2.5rem;
-  border-radius: 1.5rem;
+  padding: 48px 40px;
+  border-radius: 24px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(144, 186, 146, 0.2);
+  max-width: 100%;
+  width: 100%;
 }
 
 .member-card:hover {
@@ -164,10 +164,10 @@ const teamMembers = [
   border-color: rgba(144, 186, 146, 0.4);
 }
 
-.member-card__image {
+.member-card_image {
   width: 140px;
   height: 140px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 32px;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid rgba(144, 186, 146, 0.3);
@@ -175,57 +175,57 @@ const teamMembers = [
   transition: transform 0.3s ease;
 }
 
-.member-card:hover .member-card__image {
+.member-card:hover .member-card_image {
   transform: scale(1.1);
 }
 
-.member-card__image img {
+.member-card_image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.member-card__name {
-  font-size: 1.75rem;
+.member-card_name {
+  font-size: 28px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   transition: color 0.3s ease;
 }
 
-.member-card:hover .member-card__name {
+.member-card:hover .member-card_name {
   color: #90ba92;
 }
 
-.member-card__role {
-  font-size: 1.05rem;
+.member-card_role {
+  font-size: 17px;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
-.member-card__divider {
+.member-card_divider {
   height: 1px;
   background: linear-gradient(to right, transparent, rgba(144, 186, 146, 0.3), transparent);
-  margin: 1.5rem 0;
+  margin: 24px 0;
 }
 
-.member-card__contact {
+.member-card_contact {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 12px;
   justify-content: center;
   color: rgba(255, 255, 255, 0.65);
-  font-size: 0.95rem;
+  font-size: 15px;
 }
 
 .contact-item i {
-  font-size: 1.1rem;
+  font-size: 18px;
   color: #90ba92;
 }
 
@@ -239,23 +239,118 @@ const teamMembers = [
   color: #90ba92;
 }
 
-
 @media (max-width: 768px) {
   .team {
-    padding: 4rem 1rem;
+    padding: 64px 16px;
   }
   
-  .team__grid {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .team_grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 32px;
   }
   
   .member-card {
-    padding: 2.5rem 2rem;
+    padding: 40px 32px;
   }
   
   .hero {
     min-height: 50vh;
+  }
+}
+
+@media (max-width: 417px) {
+  .team {
+    padding: 48px 8px;
+  }
+  
+  .container {
+    padding: 0 8px;
+  }
+  
+  .team_grid {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  
+  .member-card {
+    padding: 28px 20px;
+    max-width: 100%;
+  }
+  
+  .member-card_image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .member-card_name {
+    font-size: 22px;
+  }
+  
+  .member-card_role {
+    font-size: 14px;
+  }
+  
+  .contact-item {
+    font-size: 13px;
+    gap: 8px;
+  }
+  
+  .contact-item i {
+    font-size: 16px;
+  }
+  
+  .hero {
+    min-height: 40vh;
+  }
+}
+
+@media (max-width: 350px) {
+  .team {
+    padding: 48px 8px;
+  }
+  
+  .team_grid {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  
+  .member-card {
+    padding: 24px 16px;
+    max-width: 100%;
+  }
+  
+  .member-card_image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .member-card_name {
+    font-size: 22px;
+  }
+  
+  .member-card_role {
+    font-size: 14px;
+  }
+  
+  .contact-item {
+    font-size: 13px;
+    gap: 8px;
+  }
+  
+  .contact-item i {
+    font-size: 16px;
+  }
+  
+  .hero {
+    min-height: 40vh;
+  }
+  
+  .container {
+    padding: 0 12px;
   }
 }
 </style>
