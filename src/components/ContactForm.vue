@@ -57,10 +57,10 @@ const handleSubmit = () => {
 
 <template>
     <section class="contact-section">
-        <div class="contact-section__bg"></div>
+        <div class="contact-section_bg"></div>
         <div class="container">
             <div class="contact-content">
-                <h2 class="contact-content__title">Lépj kapcsolatba velünk!</h2>
+                <h2 class="contact-content_title">Lépj kapcsolatba velünk!</h2>
 
                 <form @submit.prevent="handleSubmit" class="contact-form">
                     <div class="form-row">
@@ -115,14 +115,15 @@ const handleSubmit = () => {
 .contact-section {
     min-height: 100vh;
     background: linear-gradient(180deg, #25221a 0%, #1a251a 100%);
-    padding: 8rem 0;
+    padding: 128px 0;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
-.contact-section__bg {
+.contact-section_bg {
     position: absolute;
     inset: 0;
     background: url(../assets/contact-bg.jpg) center/cover fixed;
@@ -133,20 +134,23 @@ const handleSubmit = () => {
 .contact-section .container {
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
 }
 
 .contact-content {
     max-width: 700px;
     margin: 0 auto;
-    padding-inline: 1rem;
+    width: 100%;
 }
 
-.contact-content__title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+.contact-content_title {
+    font-size: clamp(32px, 5vw, 56px);
     font-weight: 800;
     color: #ffffff;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 48px;
     letter-spacing: -0.02em;
 }
 
@@ -154,32 +158,36 @@ const handleSubmit = () => {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(144, 186, 146, 0.15);
-    border-radius: 1.5rem;
-    padding: 3rem;
+    border-radius: 24px;
+    padding: 48px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
 }
 
 .form-group {
     position: relative;
+    width: 100%;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem 1.25rem;
+    padding: 16px 20px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(144, 186, 146, 0.2);
-    border-radius: 0.75rem;
+    border-radius: 12px;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 16px;
     font-family: inherit;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-group input::placeholder,
@@ -216,14 +224,14 @@ const handleSubmit = () => {
 .form-error {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     color: #e74c3c;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
+    font-size: 14px;
+    margin-top: 8px;
 }
 
 .form-error i {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .error-fade-enter-active,
@@ -248,16 +256,16 @@ const handleSubmit = () => {
 
 .form-submit {
     width: 100%;
-    padding: 1.125rem;
+    padding: 18px;
     background: linear-gradient(135deg, #90ba92 0%, #6a9a6d 100%);
     color: #243524;
     border: none;
-    border-radius: 0.75rem;
-    font-size: 1.125rem;
+    border-radius: 12px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .form-submit:hover {
@@ -273,7 +281,7 @@ const handleSubmit = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 8px;
     animation: successPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -293,16 +301,16 @@ const handleSubmit = () => {
 
 @media (max-width: 768px) {
     .contact-section {
-        padding: 5rem 0;
+        padding: 80px 0;
     }
 
     .contact-form {
-        padding: 2rem 1.5rem;
+        padding: 32px 24px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 16px;
     }
 }
 
