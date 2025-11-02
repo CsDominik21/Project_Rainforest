@@ -15,10 +15,12 @@
         <div class="col-md-3 col-sm-6 offset-md-2">
           <h5 class=" fw-bold">Oldalak</h5>
           <ul class="list-unstyled footer-list">
-            <li class="footer__li"><a href="#" >Élővilág</a></li>
-            <li class="footer__li"><router-link to="/quiz" title="Quiz"><a>Kvíz</a></router-link></li>
-            <li class="footer__li"><router-link to="/csapatunk" title="Csapatunk"><a>Csapatunk</a></router-link></li>
-            <li class="footer__li"><router-link to="/top-donators" title="TopDonators"><a aria-current="page">Támogatóink</a></router-link></li>
+            <li class="footerli"><router-link to="/" title="Főoldal"><i class="bi bi-house-fill"></i> Főoldal</router-link></li>
+            <li class="footerli"><router-link to="/animals" title="Animals"><i class="bi bi-person-arms-up"></i> Állatok</router-link></li>
+            <li class="footerli"><router-link to="/plants" title="Plants"><i class="bi bi-leaf-fill"></i> Növények</router-link></li>
+            <li class="footerli"><router-link to="/quiz" title="Quiz"><i class="bi bi-card-checklist"></i> Kvíz</router-link></li>
+            <li class="footerli"><router-link to="/team" title="Team"><i class="bi bi-people-fill"></i> Csapatunk</router-link></li>
+            <li class="footerli"><router-link to="/top-donators" title="TopDonators"><i class="bi bi-credit-card"></i> Támogatóink</router-link></li>
           </ul>
         </div>
         <div class="col-md-3 col-sm-6">
@@ -26,22 +28,22 @@
           <ul class="list-unstyled footer-list">
             <li>
               <a href="#"
-                ><i class="bi bi-envelope"></i> support@esoorseg.hu</a
+                ><i class="bi bi-envelope"></i>  support@esoorseg.hu</a
               >
             </li>
             <li>
               <a href="#" 
-                ><i class="bi bi-phone"></i> +36 30 223 5059</a
+                ><i class="bi bi-phone"></i>  +36 30 223 5059</a
               >
             </li>
             <li>
               <a href="#"
-                ><i class="bi bi-house"></i>Tatabánya, Réti u. 1-5, 2800</a
+                ><i class="bi bi-house"></i>  Tatabánya, Réti u. 1-5, 2800</a
               >
             </li>
             <li>
               <a href="#" 
-                ><i class="bi bi-linkedin"></i>Linkedin</a
+                ><i class="bi bi-linkedin"></i>  Linkedin</a
               >
             </li>
           </ul>
@@ -50,10 +52,10 @@
 
       <div class="row justify-content-end mt-4">
         <div class="col-auto">
-          <a href="#" class=" me-3"><i class="bi bi-facebook"></i></a>
-          <a href="#" class=" me-3"><i class="bi bi-whatsapp"></i></a>
-          <a href="#" class=" me-3"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" ><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-link me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-link me-3"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="social-link me-3"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -61,11 +63,10 @@
 </template>
 
 <style scoped>
-.footer__li{
+.footerli{
   margin: 0px !important;
   padding: 0px !important;
 }
-
 
 .footer-bg {
   background-color: #243524;
@@ -91,21 +92,35 @@ a:hover {
   color: #90ba92;
   text-decoration: none;
 }
+
 .footer {
   bottom: 0;
   left: 0;
   right: 0;
 }
+
 .container {
   max-width: 60%;
 }
+
 a {
   text-decoration: none;
-  margin: 10px !important;
 }
+
+.social-link {
+  margin: 12px !important;
+}
+
+.footer-list li {
+  margin-bottom: 8px;
+}
+
 .footer-list li a {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
+}
+.bi{
+  margin-right: 7px;
 }
 </style>
