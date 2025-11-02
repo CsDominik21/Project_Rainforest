@@ -193,7 +193,7 @@ const getResultIcon = () => {
 <style scoped>
 .quiz-page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #1a251a 0%, #243524 100%);
+  background: linear-gradient(180deg, #1a251a 0%, #243524 50%, #25221a 100%);
 }
 
 .hero-section {
