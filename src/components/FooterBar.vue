@@ -60,7 +60,7 @@
       </div>
       <div class="row mt-4 pt-3 border-top border-secondary">
         <div class="col text-center">
-          <p class="copyright mb-0">&COPY {{ new Date().getFullYear() }} Esőörseg. Minden jog fenntartva. </p>
+          <p class="copyright mb-0">&COPY {{ new Date().getFullYear() }} Esőőrség. Minden jog fenntartva. </p>
         </div>
       </div>
     </div>
