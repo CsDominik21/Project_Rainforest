@@ -58,11 +58,17 @@
           <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
+      <div class="row mt-4 pt-3 border-top border-secondary">
+        <div class="col text-center">
+          <p class="copyright mb-0">&COPY {{ new Date().getFullYear() }} Esőörseg. Minden jog fenntartva. </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
 .footerli{
   margin: 0px !important;
   padding: 0px !important;
@@ -72,7 +78,7 @@
   background-color: #243524;
 }
 
-a, h2, h3, h5, .btn-sub:hover {
+a, h2, h3, h5, .btn-sub:hover, .copyright {
   color: #fff;
 }
 

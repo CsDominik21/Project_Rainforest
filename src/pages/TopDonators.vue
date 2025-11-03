@@ -4,24 +4,23 @@ import ContactForm from '../components/ContactForm.vue';
 
 const donations = ref([]);
 const loading = ref(true);
-const error = ref(null);
 
 const fetchDonations = async () => {
   loading.value = true;
-  error.value = null;
   
   try {
-    const response = await fetch('https://crudcrud.com/api/7e67d35aaab24a08990af046505df2a8/donations');
+    const response = await fetch('https://crudcrud.com/api/ebfb6132b5fb4af38a30a85ffb3d4a2e/donations');
     
     if (!response.ok) {
-      throw new Error('Nem sikerült betölteni az adatokat');
+      donations.value = [];
+      return;
     }
     
     const data = await response.json();
     donations.value = data.sort((a, b) => b.amount - a.amount);
   } catch (err) {
-    error.value = err.message;
     console.error('Hiba a donations betöltése során:', err);
+    donations.value = [];
   } finally {
     loading.value = false;
   }
@@ -76,17 +75,10 @@ onMounted(() => {
         <p class="loading-text">Betöltés...</p>
       </div>
 
-      <div v-else-if="error" class="error-container">
-        <i class="bi bi-exclamation-triangle error-icon"></i>
-        <p class="error-text">{{ error }}</p>
-        <button class="retry-button" @click="fetchDonations">
-          Újrapróbálás
-        </button>
-      </div>
-
       <div v-else-if="topDonators.length === 0" class="empty-container">
         <i class="bi bi-inbox empty-icon"></i>
-        <p class="empty-text">Még nincs támogató</p>
+        <p class="empty-text">Még nem érkezett támogatás</p>
+        <p class="empty-subtext">Legyél Te az első támogató!</p>
       </div>
 
       <div v-else class="donators-grid">
@@ -130,7 +122,7 @@ onMounted(() => {
 <style scoped>
 .donators-page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #1a251a 0%, #243524 100%);
+  background: linear-gradient(180deg, #1a251a 0%, #243524 50%, #25221a 100%) !important;
 }
 
 .hero-section {
@@ -173,7 +165,6 @@ onMounted(() => {
 }
 
 .loading-container,
-.error-container,
 .empty-container {
   text-align: center;
   padding: 64px 32px;
@@ -198,35 +189,22 @@ onMounted(() => {
   font-size: 18px;
 }
 
-.error-icon,
 .empty-icon {
   font-size: 64px;
   color: #90ba92;
   margin-bottom: 24px;
 }
 
-.error-text,
 .empty-text {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 18px;
-  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
-.retry-button {
-  background: linear-gradient(135deg, #90ba92 0%, #6a9a6d 100%);
-  color: #ffffff;
-  border: none;
-  padding: 14px 32px;
-  border-radius: 12px;
+.empty-subtext {
+  color: rgba(255, 255, 255, 0.6);
   font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.retry-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(144, 186, 146, 0.3);
 }
 
 .donators-grid {
