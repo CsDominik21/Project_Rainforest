@@ -310,14 +310,14 @@ loadRainforest();
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     padding-inline: 16px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin-inline: auto;
 }
 
 .role-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
-    padding: 48px 40px;
+    padding: 48px 30px;
     border-radius: 32px;
     text-align: center;
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -369,7 +369,7 @@ loadRainforest();
 }
 
 .role-card_title {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 18px;
@@ -969,7 +969,11 @@ loadRainforest();
     }
 
     .role-card {
-        padding: 40px 32px;
+        padding: 40px 30px;
+    }
+
+    .role-card_title{
+        font-size: 24px;
     }
 
     .map-section {

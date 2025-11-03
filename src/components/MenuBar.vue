@@ -1,7 +1,10 @@
 <script setup>
 import DonationModal from './DonationModal.vue';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
+const route = useRoute();
+const router = useRouter();
 const showModal = ref(false);
 
 const handleDonationSubmit = (donationData) => {
@@ -9,9 +12,18 @@ const handleDonationSubmit = (donationData) => {
   showModal.value = false;
   router.push('/top-donators')
 };
+
 const openModal = () => {
   showModal.value = true;
 };
+
+const isActive = (path) => {
+  return route.path === path;
+};
+
+const isWildlifeActive = computed(() => {
+  return route.path === '/animals' || route.path === '/plants';
+});
 </script>
 
 <template>
@@ -28,23 +40,42 @@ const openModal = () => {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link to="/" title="Index"><a class="nav-link active" aria-current="page"><i class="bi bi-house-fill"></i>
-                Főoldal</a></router-link>
+              <router-link to="/" title="Index">
+                <a class="nav-link" :class="{ active: isActive('/') }" aria-current="page">
+                  <i class="bi bi-house-fill"></i> Főoldal
+                </a>
+              </router-link>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link">
+              <a class="nav-link" :class="{ active: isWildlifeActive }">
                 <i class="bi bi-leaf-fill"></i> Élővilág
               </a>
               <ul class="dropdown-menu">
-                <li><router-link to="/animals" title="Animals"><a class="nav-link">Állatok</a></router-link></li>
-                <li><router-link to="/plants" title="Plants"><a class="nav-link">Növények</a></router-link></li>
+                <li>
+                  <router-link to="/animals" title="Animals">
+                    <a class="nav-link" :class="{ active: isActive('/animals') }">Állatok</a>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/plants" title="Plants">
+                    <a class="nav-link" :class="{ active: isActive('/plants') }">Növények</a>
+                  </router-link>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
-              <router-link to="/quiz" title="Quiz"><a class="nav-link"><i class="bi bi-card-checklist"></i> Kvíz</a></router-link>
+              <router-link to="/quiz" title="Quiz">
+                <a class="nav-link" :class="{ active: isActive('/quiz') }">
+                  <i class="bi bi-card-checklist"></i> Kvíz
+                </a>
+              </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/team" title="Team"><a class="nav-link"><i class="bi bi-people-fill"></i> Csapatunk</a></router-link>
+              <router-link to="/team" title="Team">
+                <a class="nav-link" :class="{ active: isActive('/team') }">
+                  <i class="bi bi-people-fill"></i> Csapatunk
+                </a>
+              </router-link>
             </li>
             <li class="nav-item">
               <a class="nav-link" @click="openModal">Támogass minket</a>
@@ -54,7 +85,6 @@ const openModal = () => {
       </div>
     </div>
   </nav>
-
 
   <DonationModal 
     v-if="showModal" 
@@ -206,8 +236,7 @@ a{
 }
 
 .nav-link:hover,
-.nav-link.active,
-.nav-link .dropdown-toggle:active {
+.nav-link.active {
   color: #90ba92 !important;
 }
 
@@ -278,7 +307,6 @@ a{
     padding: 10px 20px;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   }
-
 
   #navbarSupportedContent:not(.show) {
     transform: translateX(100%);
