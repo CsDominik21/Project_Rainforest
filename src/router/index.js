@@ -34,7 +34,8 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(), routes,
+    history: createWebHistory('/Project_Rainforest/'), 
+    routes,
     scrollBehavior() {
         return {
             top: 0,
