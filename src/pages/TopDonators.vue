@@ -9,7 +9,7 @@ const fetchDonations = async () => {
   loading.value = true;
   
   try {
-    const response = await fetch('https://crudcrud.com/api/ebfb6132b5fb4af38a30a85ffb3d4a2e/donations');
+    const response = await fetch('https://reeldev.hu/api/690c7805b352b794177734/donations');
     
     if (!response.ok) {
       donations.value = [];
